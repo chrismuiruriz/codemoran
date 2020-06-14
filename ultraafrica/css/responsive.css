@@ -1,0 +1,837 @@
+@media (max-width:1480px){
+    .instragram_area .instragram_right {
+        width: calc(50% + 226px);
+    }
+    .instragram_area .instragram_left{
+        width: calc(50% - 226px);
+    }
+}
+@media (max-width: 1230px){
+    .navbar.navbar-expand-lg .navbar-nav .search_dropdown {
+        padding-left: 0px;
+    }
+    .navbar.navbar-expand-lg .navbar-nav li:last-child a{
+        margin-right: 0px !important;
+    }
+    .footer_area .footer_subscriber .find_out_text h2{
+        font-size: 20px;
+    }
+    .footer_area .footer_subscriber {
+        padding: 30px 20px;
+    }
+    .footer_area .footer_subscriber .form-group .find_btn {
+        margin-left: 15px;
+    }
+    .best_fitness_area .best_fitness_row .fitness_img img {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 93.5%;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_left_sidebar .plan_menu li a {
+        font: 600 14px/55px "Poppins", sans-serif;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .choose_qustion .choose_area .questions_ans {
+        width: 350px;
+    }
+    .nutrition_inner .nutrition_img img{
+        max-width: 100%;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .benefit_nutritions_content {
+        padding-right: 0px;
+    }
+    .billing_details_area .billing_details_row .your_order .order_box .checkbox_area .paypal .custom-control-description {
+        margin-top: 3px;
+    }
+    .billing_details_area .billing_details_row .your_order .order_box .checkbox_area .paypal .custom-control-description img {
+        margin-left: 0px;
+        display: block;
+        margin-top: 20px;
+    }
+    .billing_details_area .billing_details_row .your_order .order_box .checkbox_area .paypal .custom-control-description a {
+        float: left;
+        padding-top: 13px;
+    }
+    .commin_soon_aera {
+        height: 100%;
+        padding: 100px 0px;
+    }
+    .event_details_area .event_details_row .details_right_sidebar {
+        padding: 45px 15px;
+    }
+    .nutrition_plan_main .nutrition_img img{
+        width: 100%;
+    }
+    .best_fitness_area.best_fitness_area_two .best_fitness_row .fitness_img img {
+        top: 0px;
+    }
+    .main_header_3 .header_menu .navbar.navbar-expand-lg{
+        padding: 0px 15px;
+    }
+    .main_header_3 .header_menu .navbar.navbar-expand-lg #navbar_supported ul li a{
+        margin-right: 12px;
+    }
+    .header_logo_area_two .contact_info .c_info {
+        margin-left: 20px;
+    }
+    .menu_inner_area_four .navbar .menu li a {
+        margin-right: 20px;
+    }
+    .menu_inner_area_four .navbar .menu li.search a::after{
+        left: -10px;
+    }
+    .about_me_area .about_me_left .about_content{
+        padding-right: 25px;
+        padding-left: 136px;
+        max-width: 100%;
+    }
+    .service_row .body_mind .media i {
+        margin-right: 10px;
+    }
+    .service_row .body_mind .media .media-body h4{
+        font-size: 16px;
+    }
+    .service_row .body_mind .media{
+        padding: 38px 15px;
+    }
+}
+@media (max-width: 1199px){
+    .contact_area .left_contact {
+        width: 100%;
+        float: none;
+    }
+    .contact_area .right_contact {
+        width: 100%;
+        float: none;
+    }
+    .contact_area .contact_from_area {
+        max-width: 600px;
+        float: none;
+        padding-top: 65px;
+        padding-bottom: 10px;
+        margin: auto;
+    }
+    .contact_area .request_area .request img{
+        width: 100%;
+    }
+    .contact_area .request_area {
+        max-width: none;
+        width: 100%;
+    }
+    .grid_gallery_area .grid_gallery_inner .grid_gallery_item_inner .g-item {
+        width: calc(100% / 4);
+    }
+    .about_us_area .aboutus_row .about_video .video_inner {
+        float: none;
+        max-width: none;
+    }
+    .instragram_area .instragram_left .content {
+        max-width: 236px;
+    }
+    .instragram_area .instragram_left .content p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .footer_area .footer_subscriber .form-group .form-control{
+        max-width: 67%;
+    }
+}
+@media (max-width: 991px) {
+    .main_menu_area_four .header_logo_area_two .float-md-left{
+        display: none;
+    }
+    .main_menu_area_four .header_logo_area_two .contact_info{
+        float: none !important;
+    }
+    .menu_inner_area_four{
+        padding: 12px 0px;
+    }
+    .menu_inner_area_four .navbar .menu li a {
+        margin-right: 0px;
+    }
+    .menu_inner_area_four .navbar .menu li a{
+        line-height: 45px;
+        color: #fff;
+    }
+    .menu_inner_area_four .navbar .menu li.dropdown a:after{
+        content: "\f107";
+        position: absolute;
+        right: 15px;
+        top: 12px;
+        font: normal normal normal 22px/1 FontAwesome;
+        color: #fff;
+        -webkit-transition: all 300ms linear 0s;
+        -o-transition: all 300ms linear 0s;
+        transition: all 300ms linear 0s;
+        display: block;
+        border: 0px;
+    }
+    .menu_inner_area_four .navbar .menu li.dropdown .dropdown-menu li a:after{
+        display: none;
+    }
+    .main_menu_area_four .menu_inner_area_four .navbar #navbar_supported,.main_menu_area_five .menu_inner_area_four .navbar #navbar_supported{
+        background: rgba(0, 0, 0, 0.8);
+        padding: 0px 15px;
+        overflow-y: scroll;
+        max-height:415px;
+    }
+    .main_menu_area_four .menu_inner_area_four .navbar #navbar_supported ul.navbar-nav li.dropdown .dropdown-menu,.main_menu_area_five .menu_inner_area_four .navbar #navbar_supported ul.navbar-nav li.dropdown .dropdown-menu{
+        background-color: transparent;
+        padding: 0px;
+        border: 0px;
+    }
+    .main_menu_area_four .menu_inner_area_four .navbar #navbar_supported ul.navbar-nav li.dropdown .dropdown-menu li a,.main_menu_area_five .menu_inner_area_four .navbar #navbar_supported ul.navbar-nav li.dropdown .dropdown-menu li a{
+        padding: 0px 10px;
+        display: block;
+    }
+    .menu_inner_area_four .navbar .menu li.search a::after{
+        display: none;
+    }
+    .menu_inner_area_four .social-icon{
+        display: none;
+    }
+    .menu_inner_area_four .navbar .navbar-brand{
+        padding-bottom: 5px;
+    }
+    .navbar-toggler{
+        height: 25px;
+        width: 25px;
+        position: relative;
+        top: 2px;
+        padding: 0px;
+        cursor: pointer;
+        display: inline-block;
+        border: 0px;
+    }
+    .events_area .events_row .event {
+        max-width: 570px;
+        margin: 0px auto 30px;
+    }
+    .navbar-toggler span{
+        height: 3px;
+        background: #fff;
+        width: 25px;
+        display: block;
+        margin-bottom: 3px;
+        -webkit-transition: all 300ms linear 0s;
+        -o-transition: all 300ms linear 0s;
+        transition: all 300ms linear 0s;
+    }
+    .nutrition_plan_main .plan_main_row {
+        padding-left: 0px;
+    }
+    .footer_area .footer_row .quick_strat {
+        padding-left: 15px;
+    }
+    .commin_soon_aera .commin_soon_row .countdown .countdown-container{
+        margin-right: 5px;
+    }
+    .blog_area .blog_inner .blog_lift_sidebar {
+        padding-right: 15px;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .choose_qustion .choose_area .questions_ans {
+        width: 100%;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_left_sidebar {
+        margin-top: 100px;
+    }
+    .our_coaches_area .our_coaches_row .coaches .coaches_img img {
+        max-width: none;
+        width: 100%;
+    }
+    .grid_gallery_area .grid_gallery_inner .grid_gallery_item_inner .g-item {
+        width: calc(100% / 3);
+    }
+    .grid_gallery_area .grid_gallery_inner .gallery_filter li {
+        display: inline-block;
+        padding-left: 15px;
+    }
+    .chooseus_area .chooseus_row .choose_content {
+        padding: 65px 15px;
+    }
+    .error_area .error_content h2 {
+        font: 600 38px/48px "Poppins", sans-serif;
+    }
+    .error_area .error_content h4 {
+        font: 600 18px/35px "Poppins", sans-serif;
+    }
+    .error_area {
+        padding: 145px 0 200px;
+    }
+    .banner_area {
+        padding: 180px 0 80px;
+    }
+    .best_fitness_area .best_fitness_row .fitness_img img {
+        width: 100%;
+    }
+    .best_fitness_area .left_tittle.p-0{
+        margin-top: 100px;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .row.m0 {
+        padding-left: 0px;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .benefit_nutritions_img img {
+        margin-left: 0px; 
+        margin-right: -15px;
+    }
+    .blog_right_sidebar{
+        padding-bottom: 60px;
+        padding-top: 60px;
+    }
+    .blog_details .blog_inner .blog_lift_sidebar {
+        padding-bottom: 0px;
+    }
+    .blog_area {
+        padding-top: 60px;
+    }
+    .blog_area .blog_inner .blog_lift_sidebar .next_pages {
+        padding: 50px 0 0px 0px;
+    }
+    .blog_area.blog_three_col .next_pages{
+        padding-bottom: 50px;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .benefit_nutritions_img img{
+        max-width: 100%;
+    }
+    .nutrition_inner {
+        padding-left: 0px; 
+    }
+    .checkout_table .checkout_row .table.table-bordered tbody tr td:first-child {
+        padding-left: 40px;
+    }
+    .checkout_table .checkout_row .coupon {
+        display: block;
+    }
+    .checkout_table .checkout_row .coupon .get_btn {
+        margin-top: 10px;
+    }
+    .checkout_table .checkout_row .coupon .form-inline .form-group {
+        margin-bottom: 0px;
+    }
+    .billing_details_area .billing_details_row .dilling_details {
+        padding-right: 0px; 
+    }
+    .contact_us_area .meet_area .meet {
+        margin-bottom: 20px;
+    }
+    .contact_us_area .meet_area {
+        padding: 40px 0 23px 0px;
+        margin: 0px;
+    }
+    .nutrition2 .nutrition_row {
+        padding-left: 0px;
+    }
+    .nutrition_plan_main .plan_main_row .nutrition_strategies {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .nutrition_plan_main .plan_main_row .col.p-0 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .best_fitness_area.best_fitness_area_two .best_fitness_row .fitness_img img {
+        top: 0px;
+        left: 0px;
+        position: relative;
+        width: auto;
+        max-width: 100%;
+    }
+    .best_fitness_area.best_fitness_area_two .left_tittle.p-0 {
+        margin-top: 50px;
+    }
+    .about_us_area.about_us_area_4 .health_counter_row .counter_col{
+        margin-bottom: 30px;
+    }
+    .about_us_area.about_us_area_4 .health_counter_row{
+        margin-bottom: -30px;
+    }
+    .main_header_3 .header_menu .navbar.navbar-expand-lg #navbar_supported ul li a {
+        color: #fff;
+        line-height: 45px;
+    }
+    .testimonial_area_two .about_content{
+        padding-right: 0px;
+    }
+    .testimonial_area_two .about_content h2{
+        font-size: 30px;
+    }
+    .instragram_area{
+        display: block;
+        overflow: hidden;
+    }
+    .instragram_area .instragram_left,.instragram_area .instragram_right{
+        width: 100%;
+        float: none;
+    }
+    .instragram_area .instragram_left{
+        padding: 50px 0px;
+    }
+    .instragram_area .instragram_left .content{
+        margin: 0px auto;
+    }
+    .footer_area .footer_subscriber .form-group .form-control{
+        max-width: 71%;
+    }
+    .main_menu_area_five .header_logo_area_two .logo{
+        text-align: center;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .service_area_two .service_row{
+        margin-top: 50px;
+    }
+    .about_me_area .about_me_left,.about_me_area .about_me_right{
+        width: 50%;
+    }
+    .about_me_area .about_me_left .about_content {
+        padding-right: 25px;
+        padding-left: 40px;
+        max-width: 100%;
+    }
+    .about_me_area .about_me_left .about_content p.bold{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .footer_area .footer_subscriber .form-group {
+        padding-left: 0px !important;
+    }
+    .footer_area .footer_subscriber .find_out_text h2{
+        padding-bottom: 15px;
+    }
+    .main_slider_two {
+        margin-top: 106px;
+    }
+    .main_slider_two .zeus.tparrows {
+        top: 50% !important;
+    }
+    .navbar.navbar-expand-lg .navbar-nav .search_dropdown a:after{
+        display: none;
+    }
+    .main_header_3 .header_menu.navbar_fixed .navbar.navbar-expand-lg #navbar_supported ul li a {
+        line-height: 45px;
+    }
+}
+@media (max-width: 767px) {
+    .header_logo_area_two .contact_info .c_info .get_app,.header_logo_area_two .contact_info .c_info .media-body{
+        font-size: 13px;
+    }
+    .header_logo_area_two .contact_info .c_info .media-body .line_2{
+        font-size: 13px;
+    }
+    .header_logo_area_two .contact_info .c_info{
+        margin-left: 5px;
+    }
+    .header_logo_area_two .contact_info .c_info .get_app{
+        padding: 10px 15px;
+    }
+    .best_fitness_area_two .best_fitness_row .fitness_content h2::after {
+        display: none;
+    }
+    .main_header_area .header_menu .navbar .navbar-brand img,.menu_inner_area_four .navbar .navbar-brand img{
+        width: auto;
+        max-width: 75%;
+    }
+    .chooseus_area .chooseus_row .choose_img {
+        display: block;
+        flex: 0 0 100%;
+        min-height: 479px;
+        position: relative;
+    }
+    .blog_area .blog_inner .blog_items {
+        padding-bottom: 45px;
+    }
+    .health_counter_area .counter_col {
+        margin-bottom: 30px;
+    }
+    .health_counter_area.counter_area_2 .health_counter_row{
+        margin-bottom: -30px;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .benefit_nutritions_img {
+        text-align: left !important;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .benefit_nutritions_img img {
+        margin-left: -15px;
+        margin-right: 0px;
+    }
+    .chooseus_area .chooseus_row .choose_img h2 {
+        margin-top: 0px;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .chooseus_area .chooseus_row .choose_content {
+        flex: 0 0 100%;
+    }
+    .health_coach_area .health_coach_row .coach a {
+        font: 600 17px/24px "Poppins", sans-serif;
+    }
+    .contact_area .contact_from_area {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .grid_gallery_area .grid_gallery_inner .grid_gallery_item_inner .g-item {
+        width: calc(100% / 2);
+    }
+    .copy_right{
+        text-align: center;
+        padding: 10px 0px;
+    }
+    .footer_area .footer_subscriber .form-group .form-control{
+        max-width: 100%;
+    }
+    .footer_area .footer_subscriber .form-group .find_btn{
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .footer_area .copy_right h6 {
+        float: none;
+        font: 400 16px/26px "Lato", sans-serif
+    }
+    .footer_area .copy_right h6:last-child {
+        float: none;
+        font: 400 16px/26px "Lato", sans-serif;
+        padding-top: 8px;
+    }
+    .footer_area .copy_right h6 a {
+        font: 400 16px/26px "Lato", sans-serif;
+    }
+    .error_area .error_content h2 {
+        font: 600 28px/36px "Poppins", sans-serif;
+    }
+    .error_area .error_content h4 {
+        font: 600 15px/31px "Poppins", sans-serif;
+    }
+    .error_area .error_content h1 {
+        font: 900 170px/1 "Lato", sans-serif;
+    }
+    .error_area {
+        padding: 120px 0 170px;
+    }
+    .best_fitness_2 .best_fitness_row .misssion_img {
+        padding-top: 0px;
+    }
+    .best_fitness_area {
+        padding-bottom: 100px;
+    }
+    .best_fitness_area .best_fitness_row .misssion_img {
+        padding-top: 0;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .benefit_nutritions_img {
+        flex-basis: 100%;
+        width: 100%;
+        display: block;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .benefit_nutritions_content {
+        padding-left: 15px;
+    }
+    .commin_soon_aera .commin_soon_row .countdown .countdown-container{
+        margin-bottom: 10px;
+    }
+    .commin_soon_aera .commin_soon_row .form-group .get_btn {
+        margin-left: 0px;
+        display: block;
+        margin: 15px auto 0px;
+    }
+    .commin_soon_aera .commin_soon_row h2 {
+        font: 700 38px/1 "Poppins", sans-serif;
+        padding-bottom: 65px;
+    }
+    .submit_question .left_tittle h2::after, .frequently_asked_questions .left_tittle h2::after {
+        display: none
+    }
+    .wheel_axel_area .wheel_axel_row .wheel_content h2 {
+        padding-top: 50px;
+    }
+    .testimonial_area_two .testimonial_gallery{
+        margin-top: 40px;
+    }
+    .about_me_area .about_me_left{
+        padding: 100px 0px;
+    }
+    .about_me_area .about_me_left,.about_me_area .about_me_right{
+        width: 100%;
+        float: none;
+    }
+    .about_me_area{
+        display: block;
+    }
+    .grid_gallery_area .grid_gallery_inner .grid_gallery_item_inner .grid_gallery_item img {
+        width: 100%;
+    }
+    .call_content h2{
+        font-size: 32px;
+    }
+    .call_content p{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .main_slider_two {
+        margin-top: 95px;
+    }
+}
+@media (max-width: 575px) {
+    .main_menu_area_five + section, .main_menu_area_five + row, .main_menu_area_five + div,.main_menu_area_four + section{
+        margin-top: 59px;
+    }
+    .main_slider_two {
+        margin-top: 50px;
+    }
+    .juliet_health_coach .juliet_health_coach_inner .juliet_health{
+        padding: 53px 20px;
+    }
+    .header_logo_area_two{
+        display: none;
+    }
+    .health_coach_area .health_coach_row .coach{
+        max-width: 400px;
+        margin: auto auto 30px auto;
+        
+    }
+    .main_header_3 .header_menu .container{
+        padding: 0px;
+    }
+    .main_header_3 .header_menu .navbar.navbar-expand-lg{
+        border-radius: 0px;
+    }
+    .main_header_area .header_menu .navbar #navbar_supported,.main_menu_area_four .menu_inner_area_four .navbar #navbar_supported, .main_menu_area_five .menu_inner_area_four .navbar #navbar_supported{
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .best_fitness_area_two .best_fitness_row .fitness_content h2 {
+        font-size: 40px;
+        color: #fff;
+        line-height: 45px;
+    }
+    .frequently_asked_questions .frequently_questions_row .questions_ans .item a {
+        font: 600 16px/24px "Poppins", sans-serif;
+    }
+    .banner_area {
+        padding: 135px 0 80px;
+    }
+    .frequently_asked_questions .frequently_questions_row .questions_ans .item p {
+        font: 600 14px/24px "Lato", sans-serif;
+    }
+    .health_coach_area .health_coach_row .coach a {
+        font: 600 20px/24px "Poppins", sans-serif;
+    }
+    .our_coaches_area .our_coaches_row .coaches {
+        max-width: 300px;
+        margin: 0px auto 30px;
+    }
+    .what_wedo_area .left_tittle {
+        padding-right: 0px;
+    }
+    .what_wedo_area .what_wedo_inner .what_wedo_carousel .owl-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 100%;
+    }
+    .what_wedo_area .what_wedo_inner .what_wedo_carousel .owl-nav .owl-prev {
+        position: absolute;
+        left: 5px;
+    }
+    .what_wedo_area .what_wedo_inner .what_wedo_carousel .owl-nav .owl-next {
+        position: absolute;
+        right: 5px;
+    }
+    .about_us_area .aboutus_row .about_content img {
+        float: none;
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+    .about_us_area .aboutus_row .about_content a {
+        display: block;
+    }
+    .about_us_area .aboutus_row .about_video .video_inner {
+        min-width: auto;
+    }
+    .blog_without,.about_me_area .about_me_left .about_content{
+        padding: 0px 15px;
+    }
+    .blog_area .blog_inner .blog_items .blog_tittle {
+        font: 600 18px/28px "Poppins", sans-serif;
+        padding-right: 0px;
+    }
+    .events_area .events_row .event .media {
+        padding: 25px 20px 25px;
+    }
+    .events_area .events_row .event .media h3 {
+        margin-right: 15px;
+    }
+    .events_area .events_row .event .media .media-body a {
+        padding: 10px 0 10px;
+    }
+    .gallery_with_text .grid_gallery_inner .grid_gallery_item_inner .with_text .grid_gallery_item {
+        max-width: 370px;
+        margin: auto;
+    }
+    .wheel_axel_area .wheel_tab .nav-tabs a {
+        font: 500 12px/34px "Poppins", sans-serif;
+        padding: 0 8px;
+        min-width: 30px; 
+        margin-right: 8px;
+    }
+    .wheel_axel_area .wheel_tab .tab-content .tab-pane {
+        padding: 25px 15px;
+    }
+    .wheel_axel_area .wheel_tab .tab-content .tab-pane p {
+        font: 400 15px/26px "Lato", sans-serif;
+    }
+    .similar_products_area {
+        text-align: center;
+    }
+    .testimonial_area_two .about_content h2{
+        font-size: 22px;
+    }
+    .testimonial_area_two .about_content h2:after {
+        top: 20px;
+        right: -50px;
+    }
+    .testimonial_area_two .about_content p.bold{
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .footer_area .footer_row .fooer_logo{
+        padding-bottom: 44px;
+    }
+    .footer_area .footer_row .quick {
+        padding-bottom: 40px;
+    }
+    .footer_area .footer_row .quick_strat{
+        padding-bottom: 44px;
+    }
+    .event_details_area .event_details_row .details_left_sidebar .event_details {
+        padding: 55px 20px;
+    }
+}
+@media (max-width: 480px) {
+    .contact_area .request_area .request .request_content {
+        position: relative;
+        bottom: 0px;
+        padding: 15px 15px 22px;
+        left: 0;
+    }
+    .footer_area .footer_subscriber {
+        padding: 30px 20px;
+    }
+    .footer_area .footer_subscriber .find_out_text h2 {
+        font: 500 20px/30px "Poppins", sans-serif;
+        padding-bottom: 10px;
+    }
+    .error_area .error_content h1 {
+        font: 900 140px/1 "Lato", sans-serif;
+    }
+    .error_area .error_content {
+        text-align: center;
+    }
+    .error_area .error_content .get_btn {
+        margin: auto;
+    }
+    .error_area {
+        padding: 85px 0 100px;
+    }
+    .banner_area h2 {
+        font: 600 30px/1 "Poppins", sans-serif;
+    }
+    .blog_area .blog_inner .blog_lift_sidebar .blog_items .breadcrumb_date .breadcrumb {
+        float: none;
+    }
+    .blog_area .blog_inner .blog_lift_sidebar .blog_items .breadcrumb_date h6 {
+        float: none;
+    }
+    .checkout_table .checkout_row .coupon {
+        padding: 24px 5px;
+    }
+    .checkout_table .checkout_row .coupon .form-inline button {
+        min-width: 135px;
+        margin-left: 5px;
+    }
+    .commin_soon_aera {
+        display: block;
+    }
+    .commin_soon_aera .commin_soon_row {
+        max-width: none;
+        width: 100%;
+        padding: 0px 15px;
+    }
+    .commin_soon_aera .commin_soon_row .form-group .form-control {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .events_area .events_row .event .media .media-body{
+        display: block;
+        flex: 100%;
+    }
+    .events_area .events_row .event .media h3 {
+        margin-right: 0px;
+        display: inline-block;
+    }
+    .events_area .events_row .event .media {
+        display: block;
+    }
+    .main_slider_area ul li .slider_text_box .slider_button .slider_btn{
+        display: inline-block;
+    }
+    .instragram_area .instragram_right .intragram-gallary .item{
+        width: 100%;
+        float: none;
+    }
+    .call_content h2 {
+        font-size: 28px;
+    }
+    .blog_area .blog_inner .blog_items .breadcrumb li{
+        font-size: 14px;
+        line-height: 28px;
+    }
+}
+@media (max-width: 400px) {
+    .grid_gallery_area .grid_gallery_inner .grid_gallery_item_inner .g-item {
+        width: calc(100% / 1);
+    }
+    .customers_says .customers_says_row .says_carousel .media, .customers_says .customers_says_row .says_not_carousel .media {
+        padding: 35px 8px;
+    }
+    .customers_says .customers_says_row .says_carousel .media .media-body, .customers_says .customers_says_row .says_not_carousel .media .media-body {
+        margin-left: 10px;
+    }
+    .best_fitness_area .best_fitness_row .fitness_img {
+        width: 270px;
+    }
+    .nutrition_plan_area .nutrition_plan_inner .nutrition_right_sidebar .nutrition_strategies .media {
+        padding: 20px;
+    }
+    .blog_details .blog_inner .blog_lift_sidebar .comments_area .media {
+        padding: 25px 10px;
+    }
+    .blog_details .blog_inner .blog_lift_sidebar .comments_area .media .media-body {
+        padding-left: 15px;
+    }
+    .blog_details .blog_inner .blog_lift_sidebar .comments_area .media .media-body .media {
+        margin-left: -86px;
+    }
+    .blog_details .blog_inner .blog_lift_sidebar .leave_comment .from_main {
+        padding: 48px 0px;
+    }
+    .blog_area .blog_inner .blog_items .breadcrumb li {
+        font: 700 13px/30px "Lato", sans-serif;
+    }
+    .billing_details_area .billing_details_row .your_order .order_box {
+        padding: 15px 12px 58px;
+    }
+    .billing_details_area .billing_details_row .your_order .order_box .prodcut_list li{
+        font-size: 14px;
+    }
+    .commin_soon_aera .commin_soon_row .countdown{
+        max-width: 350px;
+        margin: auto;
+    }
+    .commin_soon_aera .commin_soon_row .countdown .countdown-container{
+        width: 150px;
+        height: 150px;
+    }
+    
+    
+}
