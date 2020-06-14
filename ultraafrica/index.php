@@ -128,7 +128,7 @@
         <section class="main_slider_area">
             <div id="main_slider2" class="rev_slider" data-version="5.3.1.6">
                 <ul>
-                    <li data-index="rs-1587" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="images/homeSlider/slider-3.1.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Creative" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-1587" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="./images/homeSlider/slider-3.1.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Creative" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
                         <img src="./img/slider-3.1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
 
@@ -194,7 +194,7 @@
                         </div>
                     </li> 
 
-                    <li data-index="rs-1588" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="images/homeSlider/slider-3.2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Creative" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <li data-index="rs-1588" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="./images/homeSlider/slider-3.2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Creative" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
                         <img src="./img/slider-3.2.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
 
@@ -279,19 +279,19 @@
                         
                        
                         <div class="items">
-                            <a class="img" href="javascript:void(0)"><img src="img/bg.jpg" alt=""></a>
+                            <a class="img" href="javascript:void(0)"><img src="./img/bg.jpg" alt=""></a>
                             <a href="executive-assistant-courses.php">Executive <br/>Courses</a>
                         </div>
                         <div class="items">
-                            <a class="img" href="http://localhost/ultraAfrica/executive-assistant-courses.php"><img src="/img/bg.jpg" alt=""></a>
+                            <a class="img" href="executive-assistant-courses.php"><img src="/./img/bg.jpg" alt=""></a>
                             <a href="risk-operational-management-courses.php">Management<br/>Courses</a>
                         </div>
                         <div class="items">
-                            <a class="img" href="javascript:void(0)"><img src="img/bg.jpg" alt=""></a>
+                            <a class="img" href="javascript:void(0)"><img src="./img/bg.jpg" alt=""></a>
                             <a href="procurement-supply-chain-courses.php">Procurement<br/>Courses</a>
                         </div>
                         <div class="items">
-                            <a class="img" href="javascript:void(0)"><img src="img/bg.jpg" alt=""></a>
+                            <a class="img" href="javascript:void(0)"><img src="./img/bg.jpg" alt=""></a>
                             <a href="javascript:void(0)">Public &amp; In-House Training</a>
                         </div>
                    
@@ -312,8 +312,8 @@
                         <a href="about-us.php" class="get_btn">Learn more about us</a>
                     </div>
                     <div class="col-lg-6 col-md-12 about_video"> 
-                        <div class="video_inner" style="background-image: url('http://codemoran.co.ke/ultraafrica/img/about-video.jpg');">
-                            <a class="popup-youtube" href="javascript:void(0)"><img class="img-fluid" src="images/play-icon.png" alt=""></a> 
+                        <div class="video_inner" style="background-image: url('./img/about-video.jpg');">
+                            <a class="popup-youtube" href="javascript:void(0)"><img class="img-fluid" src="./images/play-icon.png" alt=""></a> 
                         </div>
                     </div>
                 </div>
@@ -325,7 +325,7 @@
         <section class="chooseus_area">
             <div class="container-fulid">
                 <div class="row chooseus_row m-0">
-                    <div class="col-md-5 choose_img" style="background-image:url('http://codemoran.co.ke/ultraafrica/img/choose_bg.jpg');"> 
+                    <div class="col-md-5 choose_img" style="background-image:url('./img/choose_bg.jpg');"> 
                         <h2>Latest News &amp; Events</h2>
                     </div>
                     <div class="col-md-7 choose_content">
@@ -368,7 +368,7 @@
                         <!-- Items -->
                         <div class="item">
                             <div class="media"> 
-                                <a href="javascript:void(0)" class="client_img"><img src="images/client-1.jpg" alt="" class="rounded-circle"></a>
+                                <a href="javascript:void(0)" class="client_img"><img src="./images/client-1.jpg" alt="" class="rounded-circle"></a>
                                 <div class="media-body">
                                     <a href="javascript:void(0)">Robert Joe</a>
                                     <h4>I lose 10 ponds in one week</h4>
@@ -379,7 +379,7 @@
                         <!-- Items -->
                         <div class="item">
                             <div class="media"> 
-                                <a href="javascript:void(0)" class="client_img"><img src="images/client-1.jpg" alt="" class="rounded-circle"></a>
+                                <a href="javascript:void(0)" class="client_img"><img src="./images/client-1.jpg" alt="" class="rounded-circle"></a>
                                 <div class="media-body">
                                     <a href="javascript:void(0)">Robert Joe</a>
                                     <h4>I lose 10 ponds in one week</h4>
@@ -390,7 +390,7 @@
                         <!-- Items -->
                         <div class="item">
                             <div class="media"> 
-                                <a href="javascript:void(0)" class="client_img"><img src="images/client-1.jpg" alt="" class="rounded-circle"></a>
+                                <a href="javascript:void(0)" class="client_img"><img src="./images/client-1.jpg" alt="" class="rounded-circle"></a>
                                 <div class="media-body">
                                     <a href="javascript:void(0)">Robert Joe</a>
                                     <h4>I lose 10 ponds in one week</h4>

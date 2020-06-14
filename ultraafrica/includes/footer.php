@@ -1,6 +1,6 @@
 <div class="partner-section" style="text-align: center;padding-top: 10px;border-top: 1px solid #ccc;">
 	<h4 style="text-align:center;font: 600 32px &quot;Poppins&quot;, sans-serif;color: #242424;display: block;position: relative;margin-bottom: 10px;">Our Partners</h4>
-<img src="images/partners.jpg" style="margin:  0 auto;width: 900px;max-width: 100%;">
+<img src="./images/partners.jpg" style="margin:  0 auto;width: 900px;max-width: 100%;">
     <div>
     </div>
 </div>

@@ -711,7 +711,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 }
 
 .main_menu_area_five .header_logo_area_two {
-  background: url("../images/home-5/header-bg.jpg") no-repeat scroll center 0;
+  background: url(".././images/home-5/header-bg.jpg") no-repeat scroll center 0;
   background-size: cover;
 }
 
@@ -1048,7 +1048,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 }
 
 .service_row .body_mind .media:hover, .service_row .body_mind .media:focus {
-  background: url("../images/body-mind-hover.jpg") no-repeat;
+  background: url(".././images/body-mind-hover.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -1189,7 +1189,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 /* End Why Choose Us Area
 ============================== */
 .service_area_two {
-  background: url("../images/home-5/service-bg.jpg") no-repeat scroll center 0;
+  background: url(".././images/home-5/service-bg.jpg") no-repeat scroll center 0;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -1246,7 +1246,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 .fitness_course_area {
   display: block;
   overflow: hidden;
-  background: url("../images/fitness-course-bg.jpg") no-repeat fixed center 0;
+  background: url(".././images/fitness-course-bg.jpg") no-repeat fixed center 0;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -1283,7 +1283,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 .health_counter_area {
   display: block;
   overflow: hidden;
-  background: url("../images/counter-bg.jpg") no-repeat fixed center center;
+  background: url(".././images/counter-bg.jpg") no-repeat fixed center center;
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -1291,7 +1291,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 }
 
 .health_counter_area.counter_area_2 {
-  background: url("../images/counter-bg-2.jpg") no-repeat fixed center center;
+  background: url(".././images/counter-bg-2.jpg") no-repeat fixed center center;
   background-size: cover;
 }
 
@@ -1339,7 +1339,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 /* Juliet Health Coach css
 ========================== */
 .juliet_health_coach {
-  background: url("../images/coaches-section-bg.jpg") no-repeat;
+  background: url(".././images/coaches-section-bg.jpg") no-repeat;
   background-size: cover;
   display: block;
   overflow: hidden;
@@ -1387,7 +1387,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 .about_us_area .aboutus_row .about_video .video_inner {
   float: right;
   min-width: 510px;
-  background: url("../images/about-video.jpg") no-repeat scroll center center;
+  background: url(".././images/about-video.jpg") no-repeat scroll center center;
   background-size: cover;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
@@ -2275,7 +2275,7 @@ p.bold {
 /* Submit your question Are (Faq Pages)
 ======================================= */
 .submit_question {
-  background: url("../images/faq-bg.jpg") no-repeat bottom right;
+  background: url(".././images/faq-bg.jpg") no-repeat bottom right;
   display: block;
   overflow: hidden;
   padding-bottom: 55px;
@@ -2387,7 +2387,7 @@ p.bold {
 /* Banner Area
 ================================ */
 .banner_area {
-  background: url("../images/banner-bg.jpg") no-repeat scroll center center;
+  background: url(".././images/banner-bg.jpg") no-repeat scroll center center;
   background-size: cover;
   display: block;
   text-align: center;
@@ -2429,7 +2429,7 @@ p.bold {
 /* 404 Pages
 ================================ */
 .error_area {
-  background: url("../images/error-bg.jpg") no-repeat scroll center center;
+  background: url(".././images/error-bg.jpg") no-repeat scroll center center;
   background-size: cover;
   display: block;
   overflow: hidden;
@@ -2483,7 +2483,7 @@ p.bold {
 /* Comming Soon Pages
 ================================ */
 .commin_soon_aera {
-  background: url("../images/comming-soon.jpg") no-repeat scroll center center;
+  background: url(".././images/comming-soon.jpg") no-repeat scroll center center;
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -3407,7 +3407,7 @@ p.bold {
   -ms-flex: 0 0 44%;
   flex: 0 0 44%;
   padding: 0;
-  background: url("../images/choose_bg.jpg") no-repeat;
+  background: url(".././images/choose_bg.jpg") no-repeat;
   position: relative;
   background-size: cover;
   z-index: 1;
@@ -3567,7 +3567,7 @@ p.bold {
 /* Start call_action_area css
 =======================================*/
 .call_action_area {
-  background: url("../images/home-5/promo-bg.jpg") no-repeat scroll center 0;
+  background: url(".././images/home-5/promo-bg.jpg") no-repeat scroll center 0;
   background-size: cover;
   background-attachment: fixed;
   position: relative;

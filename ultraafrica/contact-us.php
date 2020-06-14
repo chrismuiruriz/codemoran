@@ -164,7 +164,7 @@
                              data-lat="-1.264966" 
                              data-lon="36.808102" 
                              data-zoom="18" 
-                             data-marker="images/map-marker.png" 
+                             data-marker="./images/map-marker.png" 
                              data-info="Design Center, Tausi Road off Muthithi Road,Nairobi, Kenya"
                              data-mlat="-1.264966"
                              data-mlon="36.808102">
