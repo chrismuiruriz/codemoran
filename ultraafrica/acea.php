@@ -106,7 +106,7 @@
             }
 
             .banner_area {
-                background: url("http://codemoran.co.ke/ultraafrica/img/executiveTransparencyCourse.png") no-repeat scroll center center;
+                background: url("./img/executiveTransparencyCourse.png") no-repeat scroll center center;
             }
             .course-highlight{
                 padding-top:20px !important;
@@ -270,7 +270,7 @@
                         <div class="col-lg-9 nutrition_right_sidebar float-md-right">
                             <div class="row nutrition_row">
                                 <div class="col nutrition_img">
-                                    <img class="img-fluid" src="http://codemoran.co.ke/ultraafrica/img/ACEA-Main-Page-Banner.jpg" alt=""> 
+                                    <img class="img-fluid" src="./img/ACEA-Main-Page-Banner.jpg" alt=""> 
                                 </div> 
                                 <div class="col-12 program_details">
                                     <h2>Course Details</h2>

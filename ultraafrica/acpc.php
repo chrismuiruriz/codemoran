@@ -106,7 +106,7 @@
             }
 
             .banner_area {
-                background: url("http://codemoran.co.ke/ultraafrica/img/executiveTransparencyCourse.png") no-repeat scroll center center;
+                background: url("./img/executiveTransparencyCourse.png") no-repeat scroll center center;
             }
             .course-highlight{
                 padding-top:20px !important;
