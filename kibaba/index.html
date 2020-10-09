@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- COMMON TAGS -->
 <meta charset="utf-8">
@@ -48,181 +48,191 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
 
+<style>
+.top-bar {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding-right: 2rem;
+}
+</style>
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <div class="app" id="app">
 
-  <header class="main-header">
+<header class="main-header">
 
-    <div class="top-bar">
+  <div class="top-bar">
 
-      <div class="block">
-        <a href="tel:mailto:kava@kava.africa">
-          <i class="fa fa-envelope"></i>
-          <span>kava@kava.africa</span>
-        </a>
-
-        <a href="tel:tel:+254709880000">
-          <i class="fa fa-phone"></i>
-          <span>+254 709 880 000</span>
-        </a>
-
-        <div class="social">
-          <a href="https://www.facebook.com/KavaAfrica/"> <i class="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com/KavaAfrica"> <i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/kava_africa/"> <i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/kava-africa/"> <i class="fab fa-linkedin"></i></a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <nav :class="{'main-nav':true,'menu-open':showMenu}">
-
-      <a href="#" class="nav-brand">
-        <img src="https://kava.africa/kava/wp-content/uploads/2018/12/Kava-Logo-01-2.jpg" alt="Kava" />
+    <div class="block">
+      <a href="tel:mailto:kava@kava.africa">
+        <i class="fa fa-envelope"></i>
+        <span>kava@kava.africa</span>
       </a>
 
-      <ul class="nav-menu-center">
-        <li>
-          <a href="https://kava.africa/#home"><span>home</span></a>
-        </li>  
-        <li>
-          <a href="https://kava.africa/#our-products"><span>products</span></a>
-        </li>
-        <li>
-          <a href="https://kava.africa/#whykava"><span>why kava</span></a>
-        </li>          
-        <li>
-          <a href="https://kava.africa/join-us/"><span>join us</span></a>
-        </li>          
-        <li>
-          <a href="https://kava.africa/faq/"><span>faqs</span></a>
-        </li>
-      </ul>
+      <a href="tel:tel:+254709880000">
+        <i class="fa fa-phone"></i>
+        <span>+254 709 880 000</span>
+      </a>
 
-      <div class="nav-menu-right">
-        <a href="https://kava.africa/#popmake-2353" class="menu-item-btn has-dropdown">
-          <span>register</span>
-          <div class="menu-dropdown" style="display: none;">
-            <a href="#">employees finance</a>
-          </div>
-        </a>
-        <a href="#" class="menu-item-btn">
-          <span>login</span>
-        </a>
+      <div class="social">
+        <a href="https://www.facebook.com/KavaAfrica/"> <i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/KavaAfrica"> <i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/kava_africa/"> <i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/kava-africa/"> <i class="fab fa-linkedin"></i></a>
       </div>
 
-      <div class="menu-button">
-        <button class="harmbuger" @click="toggleMenu()">
-          <span class="bar-1"></span>
-          <span class="bar-2"></span>
-          <span class="bar-3"></span>
-        </button>
-      </div>
-
-    </nav>
-
-  </header>
-
-  <div class="banner">
-    <div class="banner-wrapper">
-      <img src="https://res.cloudinary.com/code-moran-cl-ltd/image/upload/v1602233228/Kava/kibaba.jpg" class="desktop-banner" />
-      <img src="https://res.cloudinary.com/code-moran-cl-ltd/image/upload/v1602230197/Kava/kibaba-mobile-2.jpg" class="mobile-banner" />
     </div>
+
   </div>
 
-  <div class="note">
+  <nav :class="{'main-nav':true,'menu-open':showMenu}">
+
+    <a href="#" class="nav-brand">
+      <img src="https://kava.africa/kava/wp-content/uploads/2018/12/Kava-Logo-01-2.jpg" alt="Kava" />
+    </a>
+
+    <ul class="nav-menu-center">
+      <li>
+        <a href="https://kava.africa/#home"><span>home</span></a>
+      </li>  
+      <li>
+        <a href="https://kava.africa/#our-products"><span>products</span></a>
+      </li>
+      <li>
+        <a href="https://kava.africa/#whykava"><span>why kava</span></a>
+      </li>          
+      <li>
+        <a href="https://kava.africa/join-us/"><span>join us</span></a>
+      </li>          
+      <li>
+        <a href="https://kava.africa/faq/"><span>faqs</span></a>
+      </li>
+    </ul>
+
+    <div class="nav-menu-right">
+      <a href="https://kava.africa/#popmake-2353" class="menu-item-btn has-dropdown">
+        <span>register</span>
+        <div class="menu-dropdown" style="display: none;">
+          <a href="#">employees finance</a>
+        </div>
+      </a>
+      <a href="#" class="menu-item-btn">
+        <span>login</span>
+      </a>
+    </div>
+
+    <div class="menu-button">
+      <button class="harmbuger" @click="toggleMenu()">
+        <span class="bar-1"></span>
+        <span class="bar-2"></span>
+        <span class="bar-3"></span>
+      </button>
+    </div>
+
+  </nav>
+
+</header>
+
+<div class="banner">
+  <div class="banner-wrapper">
+    <img src="https://res.cloudinary.com/code-moran-cl-ltd/image/upload/v1602233228/Kava/kibaba.jpg" class="desktop-banner" />
+    <img src="https://res.cloudinary.com/code-moran-cl-ltd/image/upload/v1602230197/Kava/kibaba-mobile-2.jpg" class="mobile-banner" />
+  </div>
+</div>
+
+<div class="note">
+  <div class="container">
+    <p>Your savings are remitted directly to Britam Asset Managers (Kenya) Ltd a Fund Manager licensed and regulated by the Capital Markets Authority.</p>
+  </div>  
+</div>
+
+<main>
+
+  <section class="features">
+
     <div class="container">
-      <p>Your savings are remitted directly to Britam Asset Managers (Kenya) Ltd a Fund Manager licensed and regulated by the Capital Markets Authority.</p>
-    </div>  
-  </div>
 
-  <main>
+      <h2 class="section-title">Product Features</h2>
 
-    <section class="features">
+      <div class="text-img-col">
 
-      <div class="container">
-
-        <h2 class="section-title">Product Features</h2>
-
-        <div class="text-img-col">
-
-          <div class="img-col">
-            <div class="bg"></div>
-            <img src="https://res.cloudinary.com/code-moran-cl-ltd/image/upload/v1602236252/Kava/faqs-bg-image-1.jpg" alt="Kibaba" />
-          </div>
-
-          <div class="text-col">
-
-            <ul>
-              <li>Save and borrow against your savings</li>
-              <li>Attractive returns on savings of up to *10% pa.</li>
-              <li>You can borrow up to *twice your savings</li>
-              <li>The more you save, the higher your limit grows</li>
-              <li>Competitive borrowing charges at just 7.5%</li>
-            </ul>
-
-          </div>
-
+        <div class="img-col">
+          <div class="bg"></div>
+          <img src="https://res.cloudinary.com/code-moran-cl-ltd/image/upload/v1602236252/Kava/faqs-bg-image-1.jpg" alt="Kibaba" />
         </div>
 
-      </div>
-
-    </section>
-
-    <section class="last-section">
-
-      <div class="container">
-        <h2 class="section-title">How it works</h2>
-
-        <div class="text-block">
+        <div class="text-col">
 
           <ul>
-            <li>Download the Kava App</li>
-            <li>Register. A minimum of KES 10/- Verification Fee will apply</li>
-            <li>Login to the App</li>
-            <li>Create a Kibaba Savings account or select one you have created before</li>
-            <li>Deposit a minimum of KES 1000/- or more - its up to you</li>
-            <li>A minimum period of 24 hours will apply to create your limit</li>
-            <li>Access the Borrow menu on the App</li>
-            <li>Proceed to borrow</li>
-            <li>Your money will be credited to your Mobile Money Account via MPESA</li>
-            <li>Pay back in 30, 60 or 90 Days. </li>
-            <li>As long as you have a loan, you will not be ablate withdraw your savings.</li>
-
-
+            <li>Save and borrow against your savings</li>
+            <li>Attractive returns on savings of up to *10% pa.</li>
+            <li>You can borrow up to *twice your savings</li>
+            <li>The more you save, the higher your limit grows</li>
+            <li>Competitive borrowing charges at just 7.5%</li>
           </ul>
 
-          <div class="cta-wrapper">
-            <a href="https://play.google.com/store/apps/details?id=com.v2.zeepo.kava&hl=sw" class="cta-btn">Download the APP</a>
-          </div>
-
-          <div class="tcs-links">
-            <a href="#">*Terms &amp; Conditions apply</a>
-          </div>
-
         </div>
+
       </div>
 
-    </section>
-
-
-  </main>
-
-  <footer>
-    <div class="container">
-
-      <p>&copy; Copyright 2020 Kava Africa Limited | All Rights Reserved</p>
-
     </div>
-  </footer>
+
+  </section>
+
+  <section class="last-section">
+
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+
+      <div class="text-block">
+
+        <ul>
+          <li>Download the Kava App</li>
+          <li>Register. A minimum of KES 10/- Verification Fee will apply</li>
+          <li>Login to the App</li>
+          <li>Create a Kibaba Savings account or select one you have created before</li>
+          <li>Deposit a minimum of KES 1000/- or more - its up to you</li>
+          <li>A minimum period of 24 hours will apply to create your limit</li>
+          <li>Access the Borrow menu on the App</li>
+          <li>Proceed to borrow</li>
+          <li>Your money will be credited to your Mobile Money Account via MPESA</li>
+          <li>Pay back in 30, 60 or 90 Days. </li>
+          <li>As long as you have a loan, you will not be ablate withdraw your savings.</li>
+
+
+        </ul>
+
+        <div class="cta-wrapper">
+          <a href="https://play.google.com/store/apps/details?id=com.v2.zeepo.kava&hl=sw" class="cta-btn">Download the APP</a>
+        </div>
+
+        <div class="tcs-links">
+          <a href="#">*Terms &amp; Conditions apply</a>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <p>&copy; Copyright 2020 Kava Africa Limited | All Rights Reserved</p>
+
+  </div>
+</footer>
 
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>
