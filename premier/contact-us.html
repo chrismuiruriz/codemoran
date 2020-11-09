@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Premier</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+
+    <div id="app" :class="{'menu-open':showMenu}">
+
+        <header>
+
+            <div class="top bg-black text-white">
+                <div class="container mx-auto flex justify-between py-1">
+                    <a href="#">info@premierkenya.co.ke</a>
+                    <a href="#">Free deliveries for orders above Ksh. 1,000</a>
+                    <a href="#">Log In</a>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <div class="container mx-auto relative">
+
+                    <a href="./" class="mobile-logo">
+                        <img src="./assets/img/logo.png" alt="Logo">
+                    </a>
+
+                    <ul class="nav-menu text-center">
+                        <li>
+                            <a href="./">
+                                <span>HOME</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./skincare.html">
+                                <span>SKINCARE</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./makeup.html">
+                                <span>MAKEUP</span>
+                            </a>
+                        </li>
+                        <li class="has-logo">
+                            <a href="./">
+                                <img src="./assets/img/logo.png" alt="Logo">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>SHOP</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./about.html">
+                                <span>ABOUT</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="./contact-us.html">
+                                <span>CONTACT</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-icons flex items-center">
+                        <a href="#" class="mr-6">
+                            <img src="./assets/img/search-icon.png" />
+                        </a>
+                        <a href="#">
+                            <img src="./assets/img/cart-icon.png" />
+                        </a>
+                    </div>
+
+                    <a href="#" @click.prevent="showMenu = !showMenu" class="hamburger-btn">
+                        <img src="./assets/img/hamburger-icon.png" />
+                    </a>
+
+                </div>
+            </nav>
+        </header>
+
+        <section class="">
+
+            <div class="page-banner contact relative flex items-center">
+                <div class="bg absolute top-0 w-full h-full"
+                    style="background-image: url('./assets/img//contact-us-banner.png');"></div>
+                <div class="container mx-auto relative banner wider">
+                    <div class="content">
+                        <h1><span class="block">Get in touch</span></h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        <a href="tel:+254721130138" class="btn">CALL: +254 721 130 138</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="container mx-auto">
+                <div class="get-in-touch-row">
+                    <div class="contact-image" style="background-image: url('./assets/img/contacts-image.png');">&nbsp;
+                    </div>
+                    <form>
+                        <div class="section-title">
+                            <h4><span class="block">Would you like to</span> ASK US ANYTHING</h4>
+                        </div>
+
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+
+                        <div class="form-input">
+                            <label>Name*</label>
+                            <input type="text" placeholder="Name" required>
+                        </div>
+
+                        <div class="form-input">
+                            <label>Email*</label>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+
+                        <div class="form-input">
+                            <label>Phone*</label>
+                            <input type="tel" placeholder="Phone" required>
+                        </div>
+
+                        <div class="form-input">
+                            <label>Message*</label>
+                            <textarea rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-btn">
+                            <button type="button" class="btn">SUBMIT</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section icons-section-bg">
+            <div class="container mx-auto relative">
+                <div class="icons-row">
+                    <div class="icon-items">
+                        <div class="img-wrapper text-center">
+                            <img src="./assets/img/money-back.png" class="mx-auto" />
+                        </div>
+                        <div class="content py-2">
+                            <h4 class="text-center">Money Back</h4>
+                            <p>Lorem ipsum dolor sit amet, conslamop ectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore.</p>
+                        </div>
+                    </div>
+                    <div class="icon-items">
+                        <div class="img-wrapper text-center">
+                            <img src="./assets/img/free-delivery.png" class="mx-auto" />
+                        </div>
+                        <div class="content py-2">
+                            <h4 class="text-center">Free Delivery</h4>
+                            <p>Lorem ipsum dolor sit amet, conslamop ectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore.</p>
+                        </div>
+                    </div>
+
+                    <div class="icon-items">
+                        <div class="img-wrapper text-center">
+                            <img src="./assets/img/samples.png" class="mx-auto" />
+                        </div>
+                        <div class="content py-2">
+                            <h4 class="text-center">Free Sample</h4>
+                            <p>Lorem ipsum dolor sit amet, conslamop ectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container mx-auto relative">
+
+                <div class="stores">
+                    <div class="item">
+                        <h4>TWO RIVERS MALL - RUNDA</h4>
+                        <p>Address: Dagoretti Road, Karen, Nairobi, Kenya<br>
+                            E-mail: Karen_Info@premere.co.kea<br>
+                            Phone: +254 700 123n456</p>
+                    </div>
+
+                    <div class="item">
+                        <h4>THE HUB - KAREN</h4>
+                        <p>Address: Dagoretti Road, Karen, Nairobi, Kenya<br>
+                            E-mail: Karen_Info@premere.co.ke<br>
+                            Phone: +254 700 123n456</p>
+                    </div>
+
+                    <div class="item">
+                        <h4>THE MALL - WESTLANDS</h4>
+                        <p>Address: Dagoretti Road, Karen, Nairobi, Kenya<br>
+                            E-mail: Karen_Info@premere.co.ke<br>
+                            Phone: +254 700 123n456</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+
+            <div class="container mx-auto relative">
+                <div class="footer-grid">
+                    <div class="column">
+                        <h4>QUICK LINKS</h4>
+
+                        <ul>
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>NEWSLETTER</h4>
+
+                        <div class="content">
+                            <h5>Click to Subscribe</h5>
+                            <p>Subscribe to our newsletter for news, updates, activities, discounts and offers.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h4>FOLLOW US</h4>
+
+                        <div class="content socials">
+                            <a href="#"><img src="./assets/img/facebook.png" /></a>
+                            <a href="#"><img src="./assets/img/twitter.png" /></a>
+                            <a href="#"><img src="./assets/img/instagram.png" /></a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h4>REACH US</h4>
+
+                        <div class="content">
+                            <p>The Mall Westlands | The Hub Karen | Two Rivers Mall Runda</p>
+                            <p>+254 721 130 138 <br /> <strong>Email:</strong> jane@pemierdeadsea.co.ke</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="./assets/js/vue.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+</body>
+
+</html>
