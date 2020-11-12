@@ -1,0 +1,201 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 15, 2018, 2:04:48 PM
+    Author     : Christopher
+*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 15, 2018, 2:05:11 PM
+    Author     : Christopher
+*/
+.center-content {
+  text-align: center; }
+
+.text-center {
+  text-align: center; }
+
+.img-center {
+  margin: 0 auto; }
+
+.el-hidden {
+  display: none; }
+
+.text-size-12 {
+  font-size: 12px; }
+
+.text-size-14 {
+  font-size: 14px; }
+
+.text-size-16 {
+  font-size: 16px; }
+
+.text-size-18 {
+  font-size: 18px; }
+
+.medium-title {
+  color: rgba(0, 0, 0, 0.54);
+  margin: 32px 16px 16px;
+  line-height: 20px;
+  font-weight: 500;
+  font-size: 18px; }
+
+[data-name='login'] .login-screen-title {
+  text-align: center; }
+  [data-name='login'] .login-screen-title img {
+    width: 150px;
+    max-width: 90%;
+    margin: 0 auto; }
+[data-name='login'] #recapture-container {
+  width: 300px;
+  max-width: 100%;
+  overflow: hidden; }
+
+#main-panel .content-block .panel-header {
+  height: 110px;
+  background-color: #000;
+  padding: 15px 15px 20px 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: flex-end; }
+  #main-panel .content-block .panel-header .profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center; }
+    #main-panel .content-block .panel-header .profile-container img {
+      width: 60px;
+      border-radius: 60px;
+      margin-right: 15px; }
+    #main-panel .content-block .panel-header .profile-container .panel-title {
+      color: #fff;
+      overflow: hidden;
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 18px;
+      font-weight: 400; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 16, 2018, 7:24:52 PM
+    Author     : Christopher
+*/
+#map {
+  width: 100%;
+  height: 100%; }
+
+.gm-style-cc {
+  display: none; }
+
+.gm-style-iw p {
+  margin: 0;
+  padding: 0; }
+
+/* Infowindow */
+.time {
+  display: inline-block;
+  width: 20px;
+  float: left;
+  padding: 2px;
+  font-size: 12px;
+  border: 1px solid white !important;
+  border-radius: 50px;
+  margin-right: -23px;
+  margin-left: 2px;
+  margin-top: -5px; }
+
+.time p:nth-child(2) {
+  font-size: 6px; }
+
+.go {
+  float: right;
+  border: 1px solid white !important;
+  border-radius: 50px;
+  padding: 4px 7px 4px 7px;
+  font-size: 13px;
+  margin-top: -17px;
+  margin-right: 2px; }
+
+a .go {
+  color: white !important; }
+
+.time:after {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  margin-left: -22px;
+  width: 120%;
+  content: "";
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%, rgba(255, 255, 255, 0.2) 80%);
+  pointer-events: none;
+  /* so the text is still selectable */ }
+
+.custom-iw .gm-style-iw {
+  text-align: center;
+  top: 14px !important;
+  left: -22px !important; }
+
+.gm-style-iw > div > div {
+  overflow: visible !important; }
+
+.gm-style-iw > div {
+  overflow: visible !important; }
+
+.custom-iw .gm-style-iw, .custom-iw .gm-style-iw > div, .custom-iw .gm-style-iw > div > div {
+  width: 250px !important;
+  max-width: 100% !important; }
+
+/** set here the width **/
+.custom-iw, .custom-iw > div:first-child > div:last-child {
+  width: 200px !important;
+  height: 0px !important;
+  margin-left: 52px;
+  margin-top: -20px; }
+
+/** set here the desired background-color **/
+.custom-iw .gm-style-iw, .custom-iw .gm-style-iw > div, .custom-iw .gm-style-iw > div > div {
+  background-color: black !important;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 2px; }
+
+.custom-iw > div > div:nth-Child(2) {
+  visibility: hidden; }
+
+.custom-iw > div > div:nth-Child(4) {
+  visibility: hidden; }
+
+.custom-iw > div > div:nth-Child(3) {
+  margin-left: -52px;
+  margin-top: -10px; }
+
+.custom-iw > div:nth-Child(2) {
+  height: 25px !important;
+  border-radius: 25px; }
+
+/* This gets rid of the shadow of the triangle under the infowindow */
+.gm-style > div > div > div > div > div > div:first-child {
+  border: 0px !important; }
+
+/* Little triangle pieces under the main infowindow */
+.custom-iw > div > div > div:nth-child(2) > div, .custom-iw > div > div > div:nth-child(1) > div {
+  background-color: black !important; }
+
+.pac-container {
+  z-index: 999999; }
+
+/*# sourceMappingURL=solvit.css.map */

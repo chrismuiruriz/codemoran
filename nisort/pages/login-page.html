@@ -1,0 +1,55 @@
+<div class="page" data-name="login">
+    <div class="page-content login-screen-content">
+        <div class="login-screen-title">
+            <img src="assets/img/solvit-logo.png" alt="Logo" class="login-logo"/>
+        </div>
+        <form id="phone-form">
+            <div class="list">
+                <ul>
+                    <li class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">Enter Your Phone Number</div>
+                            <div class="item-input-wrap">
+                                <input type="text" id="login-phone-input" value="+254723446894" placeholder="+254723446894" autocomplete="off">
+                                <span class="input-clear-button"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list">
+                <div class="block">
+                    <p class="row">
+                        <button class="col button button-fill" id="login-verify-phone-btn">VERIFY</button>
+                    </p>
+                </div>
+                <div class="block text-size-12 text-center">By tapping Verify, an SMS may be sent. Message &amp; data rates may apply.</div>
+            </div>
+        </form>
+        <form id="code-form" class="el-hidden">
+            <div class="list">
+                <ul>
+                    <li class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">Verify your phone number</div>
+                            <div class="item-input-wrap">
+                                <input type="text" id="login-code-input" value="123456" placeholder="6 Digit Code" autocomplete="off">
+                                <span class="input-clear-button"></span>
+                                <div class="item-input-info">Enter the 6-digit code we sent to <strong data-modal="user-phone"></strong></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list">
+                <div class="block">
+                    <p class="row">
+                        <button class="col button button-fill" id="login-verify-phone-btn">RESEND</button>
+                        <button class="col button button-fill" id="login-verify-code-btn">CONTINUE</button>
+                    </p>
+                </div>
+                <div class="block text-size-12 text-center">By tapping Continue you are indicating that you agree to the Terms of Service</div>
+            </div>
+        </form>
+    </div>
+</div>
