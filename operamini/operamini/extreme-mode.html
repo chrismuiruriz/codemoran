@@ -69,6 +69,12 @@
         }
     </style>
 
+    <script type="text/javascript">
+        var isOperaExtreme = -1 < navigator.userAgent.indexOf("Opera Mini/") && -1 < navigator.userAgent.indexOf("Presto/");
+        0 == isOperaExtreme && (window.location = "../index.html");
+    </script>
+
+
 </head>
 
 <body>
