@@ -25,7 +25,7 @@ body {
 </head>
 <body>
 
-<h1>Hi there, let's talk talk code</h1>
+<h1>Hi there, let's talk code</h1>
 <a href="mailto:chris@code-moran.xyz">chris@code-moran.xyz</a>
 
 
