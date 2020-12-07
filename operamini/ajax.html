@@ -9,13 +9,14 @@
 
 <body>
 
+
     <script>
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
         };
 
-        fetch("http://jakemanion.com/NeofelisTextSheet1.txt", requestOptions)
+        fetch("http://192.168.1.7/access/NeofelisTextSheet1.txt", requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));

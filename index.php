@@ -16,6 +16,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    align-content: center;
     font-family: 'Open Sans', 'sans serif';
 }
 
@@ -23,7 +25,9 @@ body {
 </head>
 <body>
 
-<h1>CODE MORAN</h1>
+<h1>Hi there, let's talk talk code</h1>
+<a href="#">chris@code-moran.xyz</a>
+
 
 </body>
 </html>
