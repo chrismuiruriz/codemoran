@@ -204,7 +204,7 @@
                             <h6 style="margin-bottom: 2rem;">RATE CALCULATOR</h6>
                             <div class="row inner">
                                 <div class="form-group col-md-6"> <span>From</span>
-                                    <select required v-model="priceForm.town_from_id">
+                                    <select required v-model="priceForm.town_from_id" @change="getPrice()">
                                         <option value="0">Select from</option>
                                         <optgroup v-for="(country, index) in countries" :key="index"
                                             :label="country.country_name">
@@ -215,7 +215,7 @@
                                 </div>
                                 <!-- end form-group -->
                                 <div class="form-group col-md-6"> <span>To</span>
-                                    <select required v-model="priceForm.town_to_id">
+                                    <select required v-model="priceForm.town_to_id" @change="getPrice()">
                                         <option value="0">Select to</option>
                                         <optgroup v-for="(country, index) in countries" :key="index"
                                             :label="country.country_name">
