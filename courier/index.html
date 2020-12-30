@@ -743,7 +743,6 @@
 
                         axios.get(url, axiosHeaders)
                             .then((response) => {
-                                console.log(response)
                                 this.countries = response.data.countries
                             })
                             .catch((err) => {
@@ -759,16 +758,27 @@
 
                         let url = "http://193.200.241.91:8082/api/v2/approximate-charge";
 
-                        data = {
+                        if (this.priceForm.town_from_id == 0) {
+                            return
+                        }
 
-                        };
+                        if (this.priceForm.town_to_id == 0) {
+                            return
+                        }
 
-                        axios.post(url, data, axiosHeaders)
+                        if (this.priceForm.weight == null || this.priceForm.weight <= 0) {
+                            return
+                        }
+
+                        this.parcelPrice = "...";
+
+                        axios.post(url, this.priceForm, axiosHeaders)
                             .then((response) => {
                                 console.log(response)
-                                this.countries = response.data.countries
+                                this.parcelPrice = response.data
                             })
                             .catch((err) => {
+                                this.parcelPrice = 0
                                 console("Error", err);
                                 alert("Network error!")
                             });
