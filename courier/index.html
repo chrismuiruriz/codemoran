@@ -190,7 +190,11 @@
                     <div class="col-md-6 col-xs-12" style="padding-top: 2rem;">
                         <div class="section-title text-left">
                             <h6>MODERN COURIERF</h6>
-                            <h2>Reliable local and regional delivery services {{appName}}</h2>
+                            <h2>Reliable local and regional delivery services</h2>
+                            <div style="padding-right: 0;" class="side-content">
+                                <a style="margin-top: 1rem;" href="#shipment-form"
+                                    class="custom-button smooth-scroll">Track your shipment</a>
+                            </div>
                         </div>
                         <!-- end section-title -->
                     </div>
@@ -200,8 +204,8 @@
                             <h6 style="margin-bottom: 2rem;">RATE CALCULATOR</h6>
                             <div class="row inner">
                                 <div class="form-group col-md-6"> <span>From</span>
-                                    <select>
-                                        <option>Please from</option>
+                                    <select required v-model="priceForm.town_from_id">
+                                        <option value="0">Select from</option>
                                         <optgroup v-for="(country, index) in countries" :key="index"
                                             :label="country.country_name">
                                             <option v-for="town in country.towns" :key="town.id" :value="town.id">
@@ -211,24 +215,26 @@
                                 </div>
                                 <!-- end form-group -->
                                 <div class="form-group col-md-6"> <span>To</span>
-                                    <select>
-                                        <option>Please destination</option>
+                                    <select required v-model="priceForm.town_to_id">
+                                        <option value="0">Select to</option>
                                         <optgroup v-for="(country, index) in countries" :key="index"
-                                        :label="country.country_name">
-                                        <option v-for="town in country.towns" :key="town.id" :value="town.id">
-                                            {{town.town_name}}</option>
-                                    </optgroup>
+                                            :label="country.country_name">
+                                            <option v-for="town in country.towns" :key="town.id" :value="town.id">
+                                                {{town.town_name}}</option>
+                                        </optgroup>
                                     </select>
                                 </div>
 
                                 <!-- end form-group -->
                                 <div class="form-group col-md-12"> <span>Weight (KG)</span>
-                                    <input type="text">
+                                    <input type="text" @input="getPrice()" v-model="priceForm.weight" required
+                                        placeholder="e.g. 25">
                                 </div>
                                 <!-- end form-group -->
 
                                 <div class="form-group col-12">
-                                    <div class="estimated-price"><b>Estimated Price :</b> <strong>Ksh. 5,500</strong>
+                                    <div class="estimated-price"><b>Price :</b> <strong>Ksh.
+                                            {{parcelPrice}}</strong>
                                     </div>
                                     <!-- end estimated-price -->
                                 </div>
@@ -247,7 +253,7 @@
         <!-- end content-section -->
 
         <!-- end section-note -->
-        <section class="content-section">
+        <section class="content-section" id="shipment-form">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
@@ -710,7 +716,13 @@
                 data() {
                     return {
                         appName: "App Name",
-                        countries: []
+                        countries: [],
+                        parcelPrice: 0,
+                        priceForm: {
+                            town_from_id: 0,
+                            town_to_id: 0,
+                            weight: null,
+                        }
                     }
                 },
                 created() {
@@ -739,6 +751,27 @@
                                 alert("Network error!")
                             });
 
+                    },
+                    getPrice() {
+                        let axiosHeaders = {
+                            headers: { "Content-Type": "application/json" },
+                        };
+
+                        let url = "http://193.200.241.91:8082/api/v2/approximate-charge";
+
+                        data = {
+
+                        };
+
+                        axios.post(url, data, axiosHeaders)
+                            .then((response) => {
+                                console.log(response)
+                                this.countries = response.data.countries
+                            })
+                            .catch((err) => {
+                                console("Error", err);
+                                alert("Network error!")
+                            });
                     }
                 }
             })
