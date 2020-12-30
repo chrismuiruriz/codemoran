@@ -59,11 +59,10 @@
                 <!-- end custom-menu -->
                 <div class="site-menu">
                     <ul>
-                        <li><a href="logistics.html">Logistics</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
                     </ul>
                 </div>
                 <!-- end site-menu -->
@@ -107,17 +106,16 @@
                 <!-- end custom-menu -->
                 <div class="site-menu">
                     <ul>
-                        <li><a href="logistics.html">Logistics</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <!-- end site-menu -->
                 <div class="hamburger-menu"> <span></span> <span></span> <span></span> </div>
                 <!-- end hamburger-menu -->
-                <div class="navbar-button"> <a href="#quote-form">GET A QUOTE</a> </div>
+                <div class="navbar-button"> <a href="#quote-form" data-toggle="modal"
+                        data-target="#loginModal">LOGIN</a> </div>
                 <!-- end navbar-button -->
             </div>
             <!-- end inner -->
@@ -125,7 +123,7 @@
         <!-- end container -->
     </nav>
     <!-- end navbar -->
-    <header class="slider">
+    <header class="slider" style="display: none;">
         <div class="main-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -177,14 +175,63 @@
         <!-- end main-slider -->
     </header>
     <!-- end slider -->
-    <div class="section-note">
+    <div class="section-note" style="display: none;">
         <div class="container">
             <h6>Modern Courier provides reliable local and regional <strong>delivery</strong> service.</h6>
         </div>
         <!-- end container -->
     </div>
+    <section class="content-section no-bottom-spacing bottom-bg-half">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12" style="padding-top: 2rem;">
+                    <div class="section-title text-left">
+                        <h6>MODERN COURIERF</h6>
+                        <h2>Reliable local and regional delivery services</h2>
+                    </div>
+                    <!-- end section-title -->
+                </div>
+                <!-- end col-12 -->
+                <div class="col-md-6 col-xs-12" id="quote-form">
+                    <div class="calculator">
+                        <h6 style="margin-bottom: 2rem;">RATE CALCULATOR</h6>
+                        <div class="row inner">
+                            <div class="form-group col-md-6"> <span>From</span>
+                                <select>
+                                    <option>Please select</option>
+                                </select>
+                            </div>
+                            <!-- end form-group -->
+                            <div class="form-group col-md-6"> <span>To</span>
+                                <input type="text">
+                            </div>
+
+                            <!-- end form-group -->
+                            <div class="form-group col-md-12"> <span>Weight (KG)</span>
+                                <input type="text">
+                            </div>
+                            <!-- end form-group -->
+
+                            <div class="form-group col-12">
+                                <div class="estimated-price"><b>Estimated Price :</b> <strong>Ksh. 5,500</strong></div>
+                                <!-- end estimated-price -->
+                            </div>
+                            <!-- end form-group -->
+                        </div>
+                        <!-- end row inner -->
+                    </div>
+                    <!-- end calculator -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end content-section -->
+
     <!-- end section-note -->
-    <section class="content-section no-top-spacing">
+    <section class="content-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
@@ -306,7 +353,7 @@
         <!-- end container -->
     </section>
     <!-- end content-section -->
-    <section class="content-section" data-background="#f9f7ef">
+    <section class="content-section" data-background="#f9f7ef" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -391,7 +438,7 @@
         <!-- end container -->
     </section>
     <!-- end content-section -->
-    <section class="content-section no-spacing">
+    <section class="content-section no-spacing" style="display: none;">
         <div class="container">
             <div class="row align-items-center no-gutters">
                 <div class="col-lg-6">
@@ -436,12 +483,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="cta-bar">
-                        <h2>We are now Logistics <br>
-                            Industry Limited</h2>
+                        <h2>Local and regional delivery services</h2>
                         <p>We’re one of the Kenya’s leading shipping and logistics providers.</p>
                         <a href="#quote-form" class="custom-button">Get A Quote</a> <a href="#"
-                            class="light-button">Estimate
-                            cost</a>
+                            class="light-button">Track Shipment</a>
                     </div>
                     <!-- end cta-bar -->
                 </div>
@@ -452,85 +497,7 @@
         <!-- end container -->
     </section>
     <!-- end content-section -->
-    <section class="content-section no-bottom-spacing bottom-bg-half">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title text-left">
-                        <h6>TOTAL DELIVERY COST</h6>
-                        <h2>Find out the approximate cost of <br>
-                            your delivery</h2>
-                    </div>
-                    <!-- end section-title -->
-                </div>
-                <!-- end col-12 -->
-                <div class="col-12" id="quote-form">
-                    <div class="calculator">
-                        <div class="row inner">
-                            <div class="form-group col-md-6"> <span>From</span>
-                                <select>
-                                    <option>Please select</option>
-                                </select>
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group col-md-6"> <span>To</span>
-                                <input type="text">
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group col-lg-3 col-md-6"> <span>Width</span>
-                                <input type="text">
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group col-lg-3 col-md-6"> <span>Height</span>
-                                <input type="text">
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group col-lg-3 col-md-6"> <span>Weight</span>
-                                <input type="text">
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group col-lg-3 col-md-6"> <span>Fragile</span>
-                                <div class="yes-no" id="yes-no">
-                                    <input type="radio" name="rdo" id="yes" value="15000" checked />
-                                    <input type="radio" name="rdo" id="no" value="0" />
-                                    <div class="switch">
-                                        <label for="yes">Yes</label>
-                                        <label for="no">No</label>
-                                        <span></span> </div>
-                                </div>
-                                <!-- end yes-no -->
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group col-12">
-                                <label>
-                                    <input type="checkbox" checked>
-                                    Express Delivery</label>
-                                <label>
-                                    <input type="checkbox">
-                                    Insurance</label>
-                                <label>
-                                    <input type="checkbox">
-                                    Packaging</label>
-                            </div>
-                            <!-- end form-group -->
-                            <div class="form-group col-12">
-                                <div class="estimated-price"><b>Estimated Price :</b> <strong>$67.000</strong></div>
-                                <!-- end estimated-price -->
-                            </div>
-                            <!-- end form-group -->
-                        </div>
-                        <!-- end row inner -->
-                    </div>
-                    <!-- end calculator -->
-                </div>
-                <!-- end col-12 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- end content-section -->
-    <section class="content-section bg-half">
+    <section class="content-section bg-half" style="display: none;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
@@ -636,11 +603,9 @@
                 <div class="col-lg-4 col-md-6">
                     <h6 class="widget-title">Quick Links</h6>
                     <ul class="footer-menu">
-                        <li><a href="#">Air Freight</a></li>
-                        <li><a href="#">Sea Freight</a></li>
-                        <li><a href="#">Ground Cargo</a></li>
-                        <li><a href="#">Packaging Options</a></li>
-                        <li><a href="#">Track Your Shipment</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- end col-4 -->
@@ -667,15 +632,59 @@
     </footer>
     <!-- end footer -->
 
-    <!-- JS FILES -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/fancybox.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/odometer.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <div class="custom-modal">
+
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom-0">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-title text-center">
+                            <h4>Login</h4>
+                        </div>
+                        <div class="d-flex flex-column text-center">
+                            <form>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email1"
+                                        placeholder="Your email address...">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="password1"
+                                        placeholder="Your password...">
+                                </div>
+                                <div style="height: 10px;">&nbsp;</div>
+                                <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <div class="signup-section">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- JS FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/fancybox.min.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script src="js/odometer.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/scripts.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                //$('#loginModal').modal('show');
+            });
+        </script>
 </body>
 
 </html>
