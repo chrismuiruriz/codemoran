@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #111111;
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #fcfcfc;
+            text-align: center;
+            ;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <h1 id="contacts">Loading...</h1>
+
+    <script>
+        const props = ['name', 'email', 'tel', 'address', 'icon'];
+        const opts = { multiple: true };
+
+
+        async function checkProperties() {
+            const supportedProperties = await navigator.contacts.getProperties();
+            if (supportedProperties.includes('name')) {
+                // run code for name support
+                getContacts()
+            }
+            if (supportedProperties.includes('email')) {
+                // run code for email support
+                getContacts()
+            }
+            if (supportedProperties.includes('tel')) {
+                // run code for telephone number support
+                getContacts()
+            }
+            if (supportedProperties.includes('address')) {
+                // run code for address support
+                getContacts()
+            }
+            if (supportedProperties.includes('icon')) {
+                // run code for avatar support
+                getContacts()
+            }
+        }
+
+        async function getContacts() {
+            try {
+                const contacts = await navigator.contacts.select(props, opts);
+                document.querySelector("#contacts").innerHTML = contacts
+            } catch (ex) {
+                // Handle any errors here.
+                document.querySelector("#contacts").innerHTML = ex
+            }
+        }
+    </script>
+
+</body>
+
+</html>
