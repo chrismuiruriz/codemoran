@@ -95,6 +95,7 @@ img {
 }
 .main-nav .nav-brand img {
   max-height: 125px;
+  border: 2px solid #ffffff;
 }
 @media (max-width: 769px) {
   .main-nav .nav-brand img {
@@ -416,9 +417,22 @@ section {
   justify-content: space-between;
 }
 
+@media (max-width: 769px) {
+  .card-section .container .card-wrapper {
+    flex-wrap: wrap;
+  }
+}
+
 .card-section .container .card-wrapper .card-item {
   width: 25%;
   padding: 1rem;
+}
+
+@media (max-width: 769px) {
+  .card-section .container .card-wrapper .card-item {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 .card-section .container .card-wrapper .card-item .inner {
@@ -524,10 +538,27 @@ section {
   align-items: center;
 }
 
+@media (max-width: 769px) {
+  .why-kava-col {
+    min-height: auto;
+    display: block;
+    padding-bottom: 0;
+  }
+}
+
 .why-kava-col .container > div {
   width: 50%;
   margin-left: auto;
   padding-left: 1.5rem;
+}
+
+@media (max-width: 769px) {
+  .why-kava-col .container > div {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;    
+    padding-bottom: 1rem;
+  }
 }
 
 .why-kava-col .container > div h4 {
@@ -552,6 +583,16 @@ section {
   background-size: cover;
   background-position-y: -30px;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 769px) {
+  .why-kava-col::after {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    display: block;
+    background-position-y: unset;
+  }
 }
 
 .why-kava-col.bg-right {
@@ -583,9 +624,22 @@ footer .container {
   justify-content: space-between;
 }
 
+@media (max-width: 769px) {
+  footer .container {
+    flex-wrap: wrap;
+  }
+}
+
 footer .f-col {
   width: 33.333%;
   padding: 1.5rem;
+}
+
+@media (max-width: 769px) {
+  footer .f-col {
+    width: 100%;
+    padding: 0;
+  }
 }
 
 footer h4 {
@@ -627,4 +681,149 @@ footer .links a span {
 footer .social-links a {
   margin-right: 0.8rem;
   font-size: 1rem;
+}
+
+.banner.new {
+  position: relative;
+  min-height: 100vh;
+}
+
+@media (max-width: 769px) {
+  .banner.new {
+    min-height: auto;
+  }
+}
+
+.banner.new .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://res.cloudinary.com/code-moran-cl-ltd/image/upload/v1617307878/Kava/banner-plain.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 769px) {
+  .banner.new .bg {
+    background-position: center;
+  }
+}
+
+.banner.new .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 769px) {
+  .banner.new .container {
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.banner .text-col .heading-wrapper h1 {
+  color: #2f3031;
+  font-size: 3.5rem;
+}
+
+@media (max-width: 769px) {
+  .banner .text-col .heading-wrapper h1 {
+    font-size: 2rem;
+  }
+}
+
+.banner .text-col .list-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.banner .text-col .list-wrapper .list-item {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.banner .text-col .list-wrapper .list-item img {
+  width: 28px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 769px) {
+  .banner .text-col .list-wrapper .list-item img {
+    width: 16px;
+  }
+}
+
+
+.banner .text-col .list-wrapper .list-item span {
+  font-size: 1.6rem;
+  color: #2f3031;
+  font-weight: 700;
+  display: inline-block;
+}
+
+@media (max-width: 769px) {
+  .banner .text-col .list-wrapper .list-item span {
+    font-size: 1rem;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 769px) {
+  .actions {
+    display: block;
+  }
+}
+
+.actions {
+  color: #fff;
+}
+
+.actions strong {
+  font-weight: 600;
+}
+
+.actions img {
+  width: 230px;
+}
+
+@media (max-width: 769px) {
+  .actions img {
+    width: 150px;
+    margin-bottom: 1rem;
+  }
+}
+
+.actions .line {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 769px) {
+  .actions .line {
+    display: none;
+  }
+}
+
+
+.banner .img-col img {
+    width: auto;
+    max-height: calc(100vh - 100px);
+}
+
+@media (max-width: 769px) {
+  .banner .img-col {
+    display: none;
+  }
 }
