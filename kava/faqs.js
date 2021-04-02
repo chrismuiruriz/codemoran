@@ -1,6 +1,6 @@
 let FAQS = [
     {
-        "title": "general",
+        "title": "About Kava",
         "show": false,
         "faqs": [
             {
@@ -13,6 +13,12 @@ let FAQS = [
                 "show": false,
                 "ans": `<p>Kava is not a Bank. We are an approved Financial Services Agent for various Financial Institutions, on whose behalf we provide various products and services. As such, Kava has no access whatsoever to your savings and only facilitates the movement of money between you and the regulated financial services partner and focus on making your experience as delightful as possible.</p>`
             },
+        ]
+    },
+    {
+        "title": "Using the Kava App",
+        "show": false,
+        "faqs": [
             {
                 "quiz": " Who can use the Kava App?",
                 "show": false,
