@@ -273,33 +273,35 @@
 
       <section class="faqs-section" id="faqs">
 
-        <div class="container">
-          <h2 class="section-title"><span>?</span> <span>Commonly asked questions</span></h2>
+        <div class="container-wrapper">
+          <div class="container">
+            <h2 class="section-title"><span>?</span> <span>Commonly asked questions</span></h2>
 
-          <div class="faq-category-wrapper">
+            <div class="faq-category-wrapper">
 
-            <div class="faq-category" v-for="(faq, index) in faqs" :key="index">
-              <a href="#" @click.prevent="faq.show = !faq.show" class="faq-title"><i
-                  :class="{'fas':true, 'fa-plus':!faq.show, 'fa-minus':faq.show}"></i> <span
-                  v-html="faq.title"></span></a>
-              <div class="faq-container" v-show="faq.show">
-                <div class="faq-wrapper" v-for="(item, i) in faq.faqs" :key="i">
-                  <a href="#" @click.prevent="item.show = !item.show" class="faq-quiz"><i
-                      :class="{'fas':true, 'fa-plus':!item.show, 'fa-minus':item.show}"></i> <span
-                      v-html="item.quiz"></span></a>
-                  <div class="faq-ans" v-show="item.show" v-html="item.ans"></div>
+              <div class="faq-category" v-for="(faq, index) in faqs" :key="index">
+                <a href="#" @click.prevent="faq.show = !faq.show" class="faq-title"><i
+                    :class="{'fas':true, 'fa-plus':!faq.show, 'fa-minus':faq.show}"></i> <span
+                    v-html="faq.title"></span></a>
+                <div class="faq-container" v-show="faq.show">
+                  <div class="faq-wrapper" v-for="(item, i) in faq.faqs" :key="i">
+                    <a href="#" @click.prevent="item.show = !item.show" class="faq-quiz"><i
+                        :class="{'fas':true, 'fa-plus':!item.show, 'fa-minus':item.show}"></i> <span
+                        v-html="item.quiz"></span></a>
+                    <div class="faq-ans" v-show="item.show" v-html="item.ans"></div>
+                  </div>
                 </div>
               </div>
+
             </div>
 
-          </div>
+            <div class="text-block">
 
-          <div class="text-block">
+              <div class="tcs-links">
+                Read our detailed <a href="./website-terms-and-conditions/">Terms &amp; Conditions</a>
+              </div>
 
-            <div class="tcs-links">
-              Read our detailed <a href="./website-terms-and-conditions/">Terms &amp; Conditions</a>
             </div>
-
           </div>
         </div>
 
@@ -359,7 +361,8 @@
             <h4>Links</h4>
             <div class="links">
               <a href="#home" class="scroll-link"><i class="fas fa-caret-right"></i> <span>Home</span></a>
-              <a href="#what-is-kava" class="scroll-link"><i class="fas fa-caret-right"></i> <span>What's Kava</span></a>
+              <a href="#what-is-kava" class="scroll-link"><i class="fas fa-caret-right"></i> <span>What's
+                  Kava</span></a>
               <a href="#why-kava" class="scroll-link"><i class="fas fa-caret-right"></i> <span>Why Kava</span></a>
               <a href="#faqs" class="scroll-link"><i class="fas fa-caret-right"></i> <span>FAQs</span></a>
               <a href="#"><i class="fas fa-caret-right"></i> <span>Terms &amp; Conditions</span></a>

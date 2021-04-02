@@ -11,7 +11,7 @@ let FAQS = [
             {
                 "quiz": "Is Kava a Bank?",
                 "show": false,
-                "ans": `<p>Kava is not a Bank. We are an approved Financial Services Agent for various Financial Institutions, on whose behalf we provide various products and services. As such, Kava has no access whatsoever to your savings and only facilitates the movement of money between you and the regulated financial services partner and focus on making your experience as delightful as possible.</p>`
+                "ans": `<p>Kava is not a Bank. We are an approved Financial Services Agent for various Financial Institutions, on whose behalf we provide various products and services. As such, Kava has no access whatsoever to your savings and only facilitates the movement of money between you and the regulated financial services partner and focuses only on making your experience as delightful as possible.</p>`
             },
         ]
     },
@@ -22,7 +22,7 @@ let FAQS = [
             {
                 "quiz": " Who can use the Kava App?",
                 "show": false,
-                "ans": `<p>Any permanent resident in Kenya who is over 18 years of age and has a valid ID number is eligible to use the Kava App. (Some services may be available to those under 18’s using their parent’s details). You’ll also need to have a device that can run our mobile app.</p>`
+                "ans": `<p>Any permanent resident in Kenya who is over 18 years of age and has a valid ID number is eligible to use the Kava App. You’ll also need to have a device that can run our mobile app.</p>`
             },
             {
                 "quiz": "Do I really need to have a smartphone?",
@@ -37,7 +37,7 @@ let FAQS = [
             {
                 "quiz": "How do I apply for Kava services?",
                 "show": false,
-                "ans": `<p>After registration it is possible to access services on your smartphone. The services are Savings & Borrowing against your savings.</p>`
+                "ans": `<p>After registration it is possible to access services on your smartphone. The services are Savings and Borrowing against your savings.</p>`
             },
             {
                 "quiz": "What should I do if I don’t understand the terms and conditions?",
@@ -45,13 +45,40 @@ let FAQS = [
                 "ans": `
                     <p>It is critical you understand what you agree to when you create an account on Kava. Kava highlights four major points you must agree to use its services:</p>
                     <ol type="a">
-                        <li>By virtue of registering on Kava and making a deposit, you become a unit holder in the Britam Money Market Fund and your registration for, use and continuous usage of the Service shall be deemed as acceptance of the terms.</li>
-                        <li>Kava services will be provided to you as long as you are the sole account holder of your Kava and Britam Money Market Fund account or have the mandate to singularly operate the specified account. </li>
-                        <li>When you borrow against your savings, a lien equivalent to the money borrowed plus fees will be placed on your savings, which means you will have no access to that amount until all outstanding amounts are repaid in full.</li>
-                        <li>In the unfortunate circumstance that you fail to repay your loan and your account falls into default, Kava will recover the outstanding amount from your savings and investment.</li>
+                        <li>By virtue of registering on Kava and making a deposit, you become a unit holder in the Britam Money Market Fund.</li>
+                        <li>Kava services will be provided to you as long as you are the sole account holder of your Kava and Britam Money Market Fund account.</li>
+                        <li>When you borrow against your savings, a lien equivalent to the money borrowed plus fees will be placed on your savings.</li>
+                        <li>In the unfortunate event that you fail to repay your loan and your account falls into default, Kava will recover the outstanding amount from your savings and investment.</li>
                     </ol>
-                    <p>Please contact customer care by calling <a href="tel:0709880000">0709 880 000</a>. You can also send an email to <a href="mailto:kava@kava.africa">kava@kava.africa</a></p>
+                    <p>Please visit <a href="./website-terms-and-conditions/">https://kava.africa/website-terms-and-conditions/</> to read the full Terms & Conditions. If you need further explanation of the Terms & Conditions, please contact customer care by calling <a href="tel:0709880000">0709 880 000</a>. You can also send an email to <a href="mailto:kava@kava.africa">kava@kava.africa</a></p>
                 `
+            }
+        ]
+    },
+    {
+        "title": "saving &amp; Investment",
+        "show": false,
+        "faqs": [
+            {
+                "quiz": "I’m interested in Saving. How do I get started?",
+                "show": false,
+                "ans": `
+                    <p>It’s easy!</p> 
+                    <ul>
+                    <li>Download the Kava App on Google Playstore</li>
+                    <li>Follow a simple Registration process</li>
+                    <li>Activate your account by paying a one-time access fee of KSH 50/-</li>
+                    <li>Create your goals and specify the targets</li>
+                    <li>Make you debosit via MPESA</li>
+                    <li>Your account is credited instantly </li>
+                    <li>Track your goals on a in-app tracker</li>
+                    </ul>
+                `
+            },
+            {
+                "quiz": "Are my savings safe?",
+                "show": false,
+                "ans": `<p>Totally. Saving through the Kava platform go to the custody of Britam Asset Managers (K) Limited a regulated entity governed by CMA rules and vast experience in Kenya.</p>`
             },
             {
                 "quiz": "What is a Unit Trust?",
@@ -60,22 +87,6 @@ let FAQS = [
                 together to purchase a portfolio of financial securities, such as equities (shares), bonds,
                 cash, bank deposits etc. The portfolio is managed by professional fund managers. Unit trusts are registered by CMA.
                 </p>`
-            }
-        ]
-    },
-    {
-        "title": "savings &amp; Investment",
-        "show": false,
-        "faqs": [
-            {
-                "quiz": "I’m interested in Saving. How do I get started?",
-                "show": false,
-                "ans": `<p>It’s easy! Download Kava App on Play store, register by providing minimum KYC details, accept Terms & Conditions and open a Savings account.</p>`
-            },
-            {
-                "quiz": "Are my savings safe?",
-                "show": false,
-                "ans": `<p>Totally. Savings through the Kava platform go to the custody of Britam Asset Managers (K) Limited a regulated entity governed by CMA rules and vast experience in Kenya.</p>`
             },
             {
                 "quiz": "How do I make a deposit?",
@@ -94,7 +105,10 @@ let FAQS = [
             {
                 "quiz": "What is the minimum saving amount?",
                 "show": false,
-                "ans": `<p>At the moment, the minimum amount to activate an account and earn interest is Ksh 1,000/-.</p>`
+                "ans": `
+                <p>At the moment, the minimum amount to activate an account and earn interest is Ksh 1,000/-.</p>
+                <p>The amount to top up your account is also KES 1000/-</p>
+                `
             },
             {
                 "quiz": "Will I have access to my savings history?",
@@ -114,7 +128,7 @@ let FAQS = [
             {
                 "quiz": "Can I withdraw my money?",
                 "show": false,
-                "ans": `<p>Yes, you can - anytime. However, we encourage you to keep your money for longer and hence enjoy the attractive interest rates. The minimum withdrawal amount is also Ksh 1,000/-</p>`
+                "ans": `<p>Yes, you can - anytime. Withdrawals take a minimum of 48HRS to process. However, we encourage you to keep your money for longer and hence enjoy the attractive interest rates. The minimum withdrawal amount is also Ksh 1,000/-</p>`
             },
             {
                 "quiz": "Must I save a specific amount monthly?",
@@ -127,9 +141,9 @@ let FAQS = [
                 "ans": `<p>The minimum amount to start earning interest is KES 1000/-. Once you make a deposit, your savings will be invested by Britam and will start earning interest 24 hours after the deposit is made.</p>`
             },
             {
-                "quiz": "What role does Britam play in Kibaba?",
+                "quiz": "What role does Britam play in Kall this?",
                 "show": false,
-                "ans": `<p>Kava and Britam have partnered to bring customers the ability to save and invest. Britam is licensed by Capital Markets Authority (CMA) and Retirements Benefits Authority (RBA). Kava is an authorized agent (IFA) of Britam. Your savings are remitted directly and managed by Britam whenever you make a deposit.</p>`
+                "ans": `<p>Kava and Britam have partnered to bring customers the ability to save and invest. Britam is licensed by Capital Markets Authority (CMA) and Retirements Benefits Authority (RBA). Kava is an authorized agent (IFA) of Britam. Your savings are remitted directly and managed by Britam whenever you make a deposit</p>`
             }
         ]
     },
@@ -146,6 +160,13 @@ let FAQS = [
                 "quiz": "Do I have access to my savings while I have a loan",
                 "show": false,
                 "ans": `<p>When you borrow against your savings, your savings are placed on lien and you won’t be able to withdraw the amount equivalent to the loan and fees until the loan is repaid in full.</p>`
+            },
+            {
+                "quiz":"What's a lien?",
+                "show":false,
+                "ans":`<p>
+                    It’s simple. It’s the amount of your savings that are held by the Asset Manager as security against the loan. While the loan is still outstanding, no withdrawals can be made from those savings.
+                </p><p>Once the loan has been repaid then the lien will be lifted and the savings will be available. If the loan is not repaid then the savings held in lien can be offset against the balance due.</p>`
             },
             {
                 "quiz": "How long does it take to get a Kava loan?",
@@ -165,10 +186,10 @@ let FAQS = [
             {
                 "quiz": "How much money can I borrow on the Kava app?",
                 "show": false,
-                "ans": `<p>Kava offers you the ability to borrow 100% of your savings, so how much you can borrow depends on your total savings. The minimum amount you can borrow is Ksh 3,000/- and the maximum is Ksh 500,000/-</p>`
+                "ans": `<p>Kava offers you the ability to borrow 90% of your savings, so how much you can borrow depends on your total savings. The minimum amount you can borrow is Ksh 3,000/- and the maximum is Ksh 500,000/-</p>`
             },
             {
-                "quiz": "How do I pay back my Kava loan?",
+                "quiz": "How do I repay my Kava loan?",
                 "show": false,
                 "ans": `
                     <p><strong>VIA APP</strong></p>
@@ -187,7 +208,7 @@ let FAQS = [
                 "ans": `<p>Kava usually charges a one-time registration fee of Kshs. 50 and facility fees ranging from of 5%-18% depending on the tenure of the loan amount. There is also a processing fee of Kshs 50.</p>`
             },
             {
-                "quiz": "When does a Kava loan have to be paid back?",
+                "quiz": "What are the loan repayment periods?",
                 "show": false,
                 "ans": `<p>Depending on the loan you chose your Kava loan can be paid back in 1, 2 or 3 monthly instalments. </p>`
             },

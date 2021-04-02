@@ -474,11 +474,15 @@ section {
   padding-bottom: 1rem;
 }
 
+.faqs-section .container-wrapper {
+  background-color: #e9e2cb;
+}
+
 .faqs-section .container {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background-color: #e9e2cb;
 }
+
 
 .faqs-section .container .section-title {
   color: #5e5e5e;
