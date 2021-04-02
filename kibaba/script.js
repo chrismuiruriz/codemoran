@@ -1,7 +1,8 @@
 let vueConfig = {
   data() {
     return {
-      showMenu: false
+      showMenu: false,
+      faqs: FAQS
     }
   },
   methods: {

@@ -827,3 +827,163 @@ footer .social-links a {
     display: none;
   }
 }
+
+.faqs-banner {
+  min-height: 450px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media (max-width: 769px) {
+  .faqs-banner {
+    min-height: 250px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.faqs-banner .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://res.cloudinary.com/code-moran-cl-ltd/image/upload/v1617354491/Kava/faqs.jpg');
+}
+
+.faqs-banner .bg:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(40,40,40, 0.50);
+}
+
+.faqs-banner .container {
+  position: relative;
+  text-align: center;
+}
+
+.faqs-banner .container h1 {
+  font-size: 5rem;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+@media (max-width: 769px) {
+  .faqs-banner .container h1 {
+    font-size: 3rem;
+  }
+}
+
+.faqs-banner .container .breadcrumps {
+  color: #FFFFFF;
+}
+
+#faqs-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.faq-category * {
+  padding: 0;
+  margin: 0;
+}
+
+.faq-category {
+  margin-bottom: 1rem;
+}
+
+.faq-title {
+  color: #f26d22;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f26d22;
+  padding-bottom: .5rem;
+  display: block;
+}
+
+@media (max-width: 769px) {
+  .faq-title {
+    color: #f26d22;
+    font-size: 1.2rem;
+  }
+}
+
+.faq-title i {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.faq-container {
+  padding: 1.5rem;
+  padding-bottom: 0.2rem;
+}
+
+@media (max-width: 769px) {
+  .faq-container {
+    padding: 1rem;
+  }
+}
+
+.faq-wrapper {
+  margin-bottom: 1rem;
+}
+
+.faq-quiz {
+  color: #747474;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #747474;
+  padding-bottom: .5rem;
+  display: block;
+}
+
+@media (max-width: 769px) {
+  .faq-quiz {
+    color: #747474;
+    font-size: 1rem;
+  }
+}
+
+.faq-quiz i {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.faq-ans {
+  padding: 1.4rem;
+  padding-bottom: 0;
+}
+
+.faq-ans p, li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.faq-ans ol, .faq-ans ul {
+  padding-left: 1.5rem;
+  margin: 1rem;
+}
+
+.faq-ans li {
+  margin-bottom: 1rem;
+}
+
+.faq-ans a {
+  color: #f26d22;
+}
+
+span.break {
+  display: block;
+  margin-bottom: 0.2rem;
+}
