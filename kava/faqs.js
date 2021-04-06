@@ -50,13 +50,13 @@ let FAQS = [
                         <li>When you borrow against your savings, a lien equivalent to the money borrowed plus fees will be placed on your savings.</li>
                         <li>In the unfortunate event that you fail to repay your loan and your account falls into default, Kava will recover the outstanding amount from your savings and investment.</li>
                     </ol>
-                    <p>Please visit <a href="./website-terms-and-conditions/">https://kava.africa/website-terms-and-conditions/</> to read the full Terms & Conditions. If you need further explanation of the Terms & Conditions, please contact customer care by calling <a href="tel:0709880000">0709 880 000</a>. You can also send an email to <a href="mailto:kava@kava.africa">kava@kava.africa</a></p>
+                    <p>Please visit <a href="./website-terms-and-conditions/">https://kava.africa/website-terms-and-conditions/</a> to read the full Terms &amp; Conditions. If you need further explanation of the Terms & Conditions, please contact customer care by calling <a href="tel:0709880000">0709 880 000</a>. You can also send an email to <a href="mailto:kava@kava.africa">kava@kava.africa</a></p>
                 `
             }
         ]
     },
     {
-        "title": "saving &amp; Investment",
+        "title": "savings &amp; Investments",
         "show": false,
         "faqs": [
             {
@@ -139,11 +139,6 @@ let FAQS = [
                 "quiz": "When do my savings start earning Interest?",
                 "show": false,
                 "ans": `<p>The minimum amount to start earning interest is KES 1000/-. Once you make a deposit, your savings will be invested by Britam and will start earning interest 24 hours after the deposit is made.</p>`
-            },
-            {
-                "quiz": "What role does Britam play in Kall this?",
-                "show": false,
-                "ans": `<p>Kava and Britam have partnered to bring customers the ability to save and invest. Britam is licensed by Capital Markets Authority (CMA) and Retirements Benefits Authority (RBA). Kava is an authorized agent (IFA) of Britam. Your savings are remitted directly and managed by Britam whenever you make a deposit</p>`
             }
         ]
     },
