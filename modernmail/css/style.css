@@ -957,7 +957,9 @@ a:hover {
 
 .slider .main-slider .swiper-slide .container h1 {
   display: block;
-  font-size: 80px;
+  font-size: 2.5rem;
+  width: 600px;
+  max-width: 100%;
   font-weight: 800;
   margin-bottom: 20px;
 }
@@ -975,7 +977,7 @@ a:hover {
   line-height: 62px;
   display: inline-block;
   background: #fc8900;
-  color: #2F2D98;
+  color: #FFFFFF;
   font-size: 14px;
   font-weight: 600;
   padding: 0 50px;
@@ -3512,7 +3514,7 @@ only screen and (max-device-width: 767px) {
   }
 
   .slider .main-slider .swiper-slide .container h1 {
-    font-size: 46px;
+    font-size: 1.2px;
   }
 
   .slider .main-slider .swiper-slide .container h1 br {

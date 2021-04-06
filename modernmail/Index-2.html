@@ -130,29 +130,16 @@
             <!-- end container -->
         </nav>
         <!-- end navbar -->
-        <header class="slider" style="display: none;">
+        <header class="slider">
             <div class="main-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="slide-image" data-background="images/slide01.jpg"></div>
                         <!-- end slide-image -->
                         <div class="container">
-                            <h1>Transport &amp; <br>
-                                Logistics</h1>
-                            <p>Modern Mail provides reliable local and regional delivery service.</p>
-                            <a href="#quote-form">GET A QUOTE</a>
-                        </div>
-                        <!-- end container -->
-                    </div>
-                    <!-- end swiper-slide -->
-                    <div class="swiper-slide">
-                        <div class="slide-image" data-background="images/slide02.jpg"></div>
-                        <!-- end slide-image -->
-                        <div class="container">
-                            <h1>Quickest &amp; Safe <br>
-                                Delivery</h1>
-                            <p>Modern Mail provides reliable local and regional delivery service.</p>
-                            <a href="#quote-form">GET A QUOTE</a>
+                            <h1>Reliable local and regional delivery services.</h1>
+                            <p>Welcome to Modern Mail</p>
+                            <a href="#quote-form" class="text-white">GET A QUOTE</a>
                         </div>
                         <!-- end container -->
                     </div>
@@ -433,7 +420,7 @@
 
                                     <div class="delivery-wrapper">
 
-                                        <div class="delivery-options py-4 md:p-4">
+                                        <div class="delivery-options py-4">
                                             <div class="rounded-md border border-gray-200"
                                                 v-for="(option, index) in deliveryOptions" v-key="index">
                                                 <h1 class="p-4 text-center font-bold">{{option.title}}</h1>
@@ -876,7 +863,7 @@
                         <p>+254 (0) 23 00 006<br>
                             <a href="#">sales@modernmail.co.ke</a>
                         </p>
-                        <p>2075 Brandon Trail Alpharetta, <br>
+                        <p>2075 Industrial Area <br>
                             Nairobi - Kenya</p>
                     </div>
                     <!-- end col-4 -->
@@ -928,7 +915,7 @@
                                 <h4>Login</h4>
                             </div>
                             <div class="d-flex flex-column text-center">
-                                <form>
+                                <form  method="post" action="./account.html">
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="email1"
                                             placeholder="Your email address...">
@@ -938,7 +925,7 @@
                                             placeholder="Your password...">
                                     </div>
                                     <div style="height: 10px;">&nbsp;</div>
-                                    <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+                                    <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
                                 </form>
                             </div>
                         </div>

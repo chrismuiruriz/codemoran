@@ -433,7 +433,7 @@
 
                                     <div class="delivery-wrapper">
 
-                                        <div class="delivery-options py-4 md:p-4">
+                                        <div class="delivery-options py-4">
                                             <div class="rounded-md border border-gray-200"
                                                 v-for="(option, index) in deliveryOptions" v-key="index">
                                                 <h1 class="p-4 text-center font-bold">{{option.title}}</h1>
@@ -876,7 +876,7 @@
                         <p>+254 (0) 23 00 006<br>
                             <a href="#">sales@modernmail.co.ke</a>
                         </p>
-                        <p>2075 Brandon Trail Alpharetta, <br>
+                        <p>2075 Industrial Area <br>
                             Nairobi - Kenya</p>
                     </div>
                     <!-- end col-4 -->
@@ -928,7 +928,7 @@
                                 <h4>Login</h4>
                             </div>
                             <div class="d-flex flex-column text-center">
-                                <form>
+                                <form method="post" action="./account.html">
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="email1"
                                             placeholder="Your email address...">
@@ -938,7 +938,7 @@
                                             placeholder="Your password...">
                                     </div>
                                     <div style="height: 10px;">&nbsp;</div>
-                                    <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+                                    <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
                                 </form>
                             </div>
                         </div>
