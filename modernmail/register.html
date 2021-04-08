@@ -144,7 +144,7 @@
         </nav>
         <!-- end navbar -->
 
-        <div v-if="isUserLoggedIn">
+        <div v-if="!isUserLoggedIn">
 
             <section class="content-section no-bottom-spacing bottom-bg-half">
                 <div class="container">
@@ -154,11 +154,72 @@
 
                             <div class="p-4 mb-10">
 
-                                <h6 class="mb-4 text-2xl">My Account</h6>
-                                <div class="bg-white shadow-sm p-4 md:p-6">
+                                <h6 class="mb-4 text-center text-2xl">Register</h6>
+                                <div class="bg-white shadow-sm p-4 md:p-6 max-w-xl mx-auto">
 
-                                    &nbsp;
-                                
+                                    <form method="post" @submit.prevent="register()">
+
+                                        <div class="input-wrapper mb-4">
+                                            <label
+                                                clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Name:</label>
+                                            <input v-model="mainForm.customer_first_name" :disable="mainFormSuccess"
+                                                type="text" placeholder="e.g. Juma Balala" required
+                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                                        </div>
+
+                                        <div class="input-wrapper mb-6">
+                                            <label
+                                                clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Email:</label>
+                                            <input v-model="mainForm.customer_email" :disable="mainFormSuccess"
+                                                type="email" placeholder="e.g. jumabalala@gmail.com" required
+                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                                        </div>
+
+                                        <div class="input-wrapper mb-6">
+                                            <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Mobile
+                                                Phone:</label>
+                                            <input v-model="mainForm.customer_phone_number" :disable="mainFormSuccess"
+                                                type="tel" placeholder="e.g. 07XXXXXXXX" required
+                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                                        </div>
+
+                                        <div class="input-wrapper mb-6">
+                                            <label
+                                                clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Password:</label>
+                                            <input v-model="mainForm.password" type="password"
+                                                :disable="mainFormSuccess" required placeholder="e.g. XXXXXXXX"
+                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                                        </div>
+
+                                        <div class="input-wrapper mb-6">
+                                            <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Confirm
+                                                Password:</label>
+                                            <input v-model="mainForm.password_confirmation" :disable="mainFormSuccess"
+                                                type="password" placeholder="e.g. XXXXXXXX" required
+                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                                        </div>
+
+
+                                        <div role="alert" class="mb-6" v-if="mainFormSubmitted">
+                                            <div
+                                                :class="{'border rounded-b px-4 py-3':true, 'border-red-400 bg-red-100 text-red-700':mainFormHasError, 'border-green-400 bg-green-100 text-green-700':mainFormSuccess}">
+                                                <p v-html="mainFormMessage"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-6">
+                                            <button type="submit" v-if="!mainFormSuccess"
+                                                class="px-4 py-2 text-white bg-blue hover:opacity-50 focus:bg-indigo-600 focus:outline-none">Register</button>
+
+
+                                            <div class="my-6">
+                                                <a href="./login.html" class="inline-block">Already have an account?</a>
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+
                                 </div>
                                 <!-- end row inner -->
                             </div>
@@ -174,13 +235,13 @@
 
         </div>
 
-        <section v-if="!isUserLoggedIn" class="content-section no-bottom-spacing bottom-bg-half">
+        <section v-if="isUserLoggedIn" class="content-section no-bottom-spacing bottom-bg-half">
             <div class="container">
                 <div class="row">
                     <!-- end col-12 -->
                     <div class="col-md-12 col-xs-12">
-                        <div class="h-16 text-center"><span class="text-red-700">Authentication failed!</span> <a href="./login.html"
-                                class="text-blue-600 underline">Login</a></div>
+                        <div class="h-16 text-center"><a href="./account.html" class="text-blue-600 underline">My
+                                Account Dashboard</a></div>
                     </div>
                 </div>
             </div>
@@ -244,6 +305,7 @@
         <script src="js/isotope.min.js"></script>
         <script src="js/scripts.js"></script>
 
+
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
@@ -256,6 +318,14 @@
                     return {
                         isUserLoggedIn: false,
                         appName: "Modern Mail",
+                        mainForm: {
+                            "customer_first_name": null,
+                            "customer_phone_number": null,
+                            "customer_phone_code": "254",
+                            "customer_email": "",
+                            "password": null,
+                            "password_confirmation": null
+                        },
                         mainFormSubmitted: false,
                         mainFormHasError: false,
                         mainFormSuccess: false,
@@ -266,6 +336,7 @@
                     console.log('App Created')
                 },
                 beforeMount() {
+                    console.log('Before Mount')
                     if (Cookies.get('access_token') !== undefined) {
                         this.isUserLoggedIn = true
                     }
@@ -281,8 +352,52 @@
                         if (x) {
                             Cookies.remove('access_token')
                             this.isUserLoggedIn = false
+                            window.location.href = "./login.html"
                         }
                         return
+                    },
+                    register() {
+                        let self = this
+
+                        self.onMainFormReset()
+
+                        if (self.mainForm.password !== self.mainForm.password_confirmation) {
+                            self.onMainFormError("Password do not match!")
+                            return
+                        }
+
+                        let axiosHeaders = {
+                            headers: { "Content-Type": "application/json" },
+                        };
+                        let url = "https://api.courier.modernmail.co.ke/api/v2/register";
+                        axios.post(url, this.mainForm, axiosHeaders)
+                            .then((response) => {
+                                if (response.data.access_token == null) {
+                                    self.onMainFormError("Registration failed, try again!")
+                                } else {
+
+                                    Cookies.set('access_token', response.data.access_token, { expires: response.data.expires_in })
+                                    self.onMainFormSuccess("Registration successful")
+                                }
+                            })
+                            .catch((err) => {
+                                if (err.response.data.message) {
+                                    if (err.response.data.errors) {
+                                        let errors = err.response.data.errors
+                                        let str = ''
+                                        Object.keys(errors).forEach(key => {
+                                            errors[key].forEach(error => {
+                                                str += `${error} <br/>`
+                                            })
+                                        })
+                                        self.onMainFormError(str)
+                                    } else {
+                                        self.onMainFormError(err.response.data.message)
+                                    }
+                                } else {
+                                    self.onMainFormError("Registration failed, try again!")
+                                }
+                            });
                     },
                     onMainFormError(msg) {
                         this.mainFormSubmitted = true;
@@ -294,7 +409,7 @@
                         this.mainFormSubmitted = true;
                         this.mainFormHasError = false;
                         this.mainFormSuccess = true;
-                        this.mainFormMessage = `${msg} <a href="./account.html" class="underline font-bold">My Account</a>`;
+                        this.mainFormMessage = `${msg} <a href="./login.html" class="underline font-bold">Login</a>`;
                     },
                     onMainFormReset() {
                         this.mainFormSubmitted = false;
