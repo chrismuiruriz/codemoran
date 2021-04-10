@@ -254,7 +254,7 @@
                 </div>
 
                 <!-- FormSection 1 -->
-                <form autocomplete="asdasd" class="form-section" v-if="formSection == 1">
+                <form autocomplete="asdasddd" class="form-section" v-show="formSection == 1">
 
                   <h4 class="text-lg font-bold mb-4">From:</h4>
                   <div class="input-wrapper mb-4">
@@ -265,25 +265,26 @@
 
                   <div class="input-wrapper mb-4">
                     <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">City:</label>
-                    <input v-model="form.from.city" type="text" placeholder="e.g. Nairobi"
+                    <input v-model="form.from.city" autocomplete="casbuascfcy" type="text" placeholder="e.g. Nairobi"
                       class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                   </div>
 
                   <div class="input-wrapper mb-6">
                     <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Address:</label>
-                    <input type="text" v-model="form.from.address" placeholder="e.g. Moi Avenue, Trust Building..."
+                    <input type="text" autocomplete="adhbtcajcd" v-model="form.from.address"
+                      placeholder="Type to search..." ref="mapSearchInput"
                       class="map-autocomplete w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                   </div>
 
                   <div class="mb-6">
-                    <button @click="showFormSection(2)" type="type"
+                    <button @click="showFormSection(2)" type="button"
                       class="px-4 py-2 text-white bg-blue focus:bg-indigo-600 focus:outline-none">Next</button>
                   </div>
 
                 </form>
 
                 <!-- FormSection 2 -->
-                <div class="form-section" v-if="formSection == 2">
+                <div class="form-section" v-show="formSection == 2">
 
                   <h4 class="text-lg font-bold mb-4">To:</h4>
                   <div class="input-wrapper mb-4">
@@ -294,22 +295,23 @@
 
                   <div class="input-wrapper mb-4">
                     <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">City:</label>
-                    <input type="text" v-model="form.to.city" placeholder="e.g. Dodoma"
+                    <input type="text" autocomplete="adhbtca" v-model="form.to.city" placeholder="e.g. Dodoma"
                       class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                   </div>
 
                   <div class="input-wrapper mb-6">
                     <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Address:</label>
-                    <input type="text" v-model="form.to.address" placeholder="e.g. 5th Avenue street"
+                    <input type="text" autocomplete="adhbtcajj" v-model="form.to.address"
+                      placeholder="e.g. 5th Avenue street"  ref="mapSearchInput2"
                       class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                   </div>
 
                   <div class="mb-6">
 
-                    <button @click="showFormSection(1)" type="type"
+                    <button @click="showFormSection(1)" type="button"
                       class="mr-4 px-4 py-2 text-white bg-gray-500 focus:bg-indigo-600 focus:outline-none">Back</button>
 
-                    <button @click="showFormSection(3)" type="type"
+                    <button @click="showFormSection(3)" type="button"
                       class="px-4 py-2 text-white bg-blue focus:bg-indigo-600 focus:outline-none">Next</button>
                   </div>
 
@@ -394,10 +396,10 @@
 
                     <div class="mb-6">
 
-                      <button @click="showFormSection(2)" type="type"
+                      <button @click="showFormSection(2)" type="button"
                         class="mr-4 px-4 py-2 text-white bg-gray-500 focus:bg-indigo-600 focus:outline-none">Back</button>
 
-                      <button type="type" @click="showFormSection(4)"
+                      <button type="button" @click="showFormSection(4)"
                         class="px-4 py-2 text-white bg-blue focus:bg-indigo-600 focus:outline-none">Get
                         Quote</button>
                     </div>
@@ -450,7 +452,7 @@
                           </div>
                           <span class="line block my-3"></span>
 
-                          <button type="type"
+                          <button type="button"
                             class="my-2 w-full px-4 py-2 text-white bg-blue focus:bg-indigo-600 focus:outline-none">Make
                             Payment</button>
 
@@ -463,7 +465,7 @@
                           </ul>
 
                           <div class="mb-6">
-                            <button @click="showFormSection(3)" type="type"
+                            <button @click="showFormSection(3)" type="button"
                               class="mr-4 px-4 py-2 text-white bg-gray-500 focus:bg-indigo-600 focus:outline-none">Back</button>
                           </div>
                         </div>
@@ -909,47 +911,28 @@
     <script src="js/isotope.min.js"></script>
     <script src="js/scripts.js"></script>
 
-    <script async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsCqUBEJP6IzI4o2UTkCaCU2ZC78C9HU&libraries=places&callback=initMap">
-      </script>
+    <!-- <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsCqUBEJP6IzI4o2UTkCaCU2ZC78C9HU&libraries=places&callback=initMapVue"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue-select@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
 
-    <script>
+    <script async>
 
-      function initMap() {
-        // const map = new google.maps.Map(document.getElementById("map"), {
-        //   center: { lat: 50.064192, lng: -130.605469 },
-        //   zoom: 3,
-        // });
-        // const card = document.getElementById("pac-card");
-        // map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-        // [START maps_places_autocomplete_creation]
-        const center = { lat: 50.064192, lng: -130.605469 };
-        // Create a bounding box with sides ~10km away from the center point
-        const defaultBounds = {
-          north: center.lat + 0.1,
-          south: center.lat - 0.1,
-          east: center.lng + 0.1,
-          west: center.lng - 0.1,
-        };
-        //const input = document.getElementById("pac-input");
-        const input = document.querySelector('.map-autocomplete')
-        const options = {
-          bounds: defaultBounds,
-          componentRestrictions: { country: "ke" },
-          fields: ["address_components", "geometry", "icon", "name"],
-          origin: center,
-          strictBounds: false,
-          types: ["establishment"],
-        };
-        const autocomplete = new google.maps.places.Autocomplete(input, options);
-        // [END maps_places_autocomplete_creation]
+      window.checkAndAttachMapScript = function (callback) {
+        if (!!window.google) {  // If you're using vue cli, then directly checking
+          // 'google' obj will throw an error at the time of transpiling.
+          callback();
+          return true;
+        }
+
+        window.mapApiInitialized = callback;
+        let script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsCqUBEJP6IzI4o2UTkCaCU2ZC78C9HU&libraries=places&callback=mapApiInitialized';
+        document.body.appendChild(script);
       }
-
 
     </script>
 
@@ -1021,6 +1004,9 @@
         created() {
           console.log('Created')
           this.getCountries()
+        },
+        mounted() {
+          window.checkAndAttachMapScript(this.initLocationSearch);
         },
         beforeMount() {
           if (Cookies.get('access_token') !== undefined) {
@@ -1115,6 +1101,21 @@
               });
 
           },
+          initLocationSearch() {
+            let autocomplete = new window.google.maps.places.Autocomplete(this.$refs.mapSearchInput);
+            autocomplete.addListener("place_changed", function () {
+              let place = autocomplete.getPlace();
+              // if (place && place.address_components) {
+              //   console.log(place.address_components);
+              // }
+            });
+
+            let autocomplete_2 = new window.google.maps.places.Autocomplete(this.$refs.mapSearchInput2);
+            autocomplete_2.addListener("place_changed", function () {
+              let place = autocomplete_2.getPlace();
+            });
+
+          }
         }
       })
 
