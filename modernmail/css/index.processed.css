@@ -3,15 +3,15 @@
 * - Add any stylespxt here!
 */
 body {
-  background: #F1F1F1;
+  background: #f1f1f1;
 }
 
 .bg-blue {
-  background: #2F2D98;
+  background: #2f2d98;
 }
 
 .list-item-input {
-  width: 70px;
+  width: 77px;
   padding: 5px 7px;
   border: 1px solid gray;
   display: block;
@@ -37,7 +37,7 @@ body {
 }
 
 .item-col:first-child .list-item-input {
-  width: 120px;
+  width: 130px;
 }
 
 @media (max-width: 768px) {
@@ -47,7 +47,7 @@ body {
 }
 
 .list-item {
-  background: #E9E9E9;
+  background: #e9e9e9;
   padding: 0.5rem;
   padding-bottom: 1rem;
   margin-bottom: 0.5rem;
@@ -75,4 +75,56 @@ input[type="radio"]:checked ~ i {
 .line {
   height: 1px;
   border: 1px solid rgba(204, 204, 204, 0.28);
+}
+
+.package-chooser {
+  width: 150px;
+  display: block;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+}
+
+.package-chooser .vs__search::placeholder,
+.package-chooser .vs__dropdown-toggle,
+.package-chooser .vs__dropdown-menu {
+  background: #ffffff;
+  border-color: gray;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 0.75rem;
+}
+
+.package-chooser .vs__clear,
+.package-chooser .vs__open-indicator {
+  fill: #eeeeee;
+}
+
+.vs__selected-options {
+  flex-wrap: nowrap;
+}
+
+.package-total {
+  padding-left: 0.5rem
+}
+
+.package-total .label {
+  width: 150px;
+  margin-right: 1rem;
+  font-weight: 600;
+  font-size: medium;
+}
+
+.package-total .quantity {
+  width: 77px;
+  text-align: center;
+  margin-right: 1rem;
+  font-weight: 600;
+  font-size: medium;
+}
+
+.package-total .weight {
+  width: 77px;
+  text-align: center;
+  font-weight: 600;
+  font-size: medium;
 }

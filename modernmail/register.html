@@ -368,7 +368,7 @@
                         let axiosHeaders = {
                             headers: { "Content-Type": "application/json" },
                         };
-                        let url = "https://api.courier.modernmail.co.ke/api/v2/register";
+                        let url = "https://courierapi.techapiguru.com/api/v2/register";
                         axios.post(url, this.mainForm, axiosHeaders)
                             .then((response) => {
                                 if (response.data.access_token == null) {

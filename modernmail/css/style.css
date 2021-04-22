@@ -1167,6 +1167,7 @@ a:hover {
   position: absolute;
   left: 0;
   bottom: 0;
+  display: none;
 }
 
 /* SECTION TITLE */
