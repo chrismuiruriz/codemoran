@@ -73,7 +73,7 @@
               <li>
                 <a href="./index.html" @click.prevent="logout" v-if="isUserLoggedIn">Logout</a>
 
-                <a href="./login.html" v-if="!isUserLoggedIn">Login</a>
+                <a href="./login.html" v-if="!isUserLoggedIn" @click.prevent="openModal">Login</a>
               </li>
             </ul>
           </div>
@@ -129,7 +129,7 @@
           <div class="navbar-button">
             <a href="./index.html" @click.prevent="logout" v-if="isUserLoggedIn">LOGOUT</a>
 
-            <a href="./login.html" v-if="!isUserLoggedIn">LOGIN</a>
+            <a href="#" @click.prevent="openModal()" v-if="!isUserLoggedIn">LOGIN</a>
           </div>
           <!-- end navbar-button -->
         </div>
@@ -249,6 +249,15 @@
                         <span class="text-sm">{{item.length}} x {{item.width}} x {{item.height}}</span>
                       </div>
                     </div>
+                  </div>
+
+                  <hr class="my-4 block"/>
+
+                  <div v-if="total.quote_price">
+                    <h4 class="mb-2 font-bold">Order Details:</h4>
+                    <span v-if="total.weight" class="block mb-1">Item: {{listItems.length}}</span>
+                    <span v-if="total.weight" class="block mb-1">Weight: {{total.weight}} kg</span>
+                    <span v-if="total.quote_price">Total: {{total.quote_price}} KES</span>
                   </div>
 
                 </div>
@@ -420,7 +429,7 @@
                 <!-- FormSection 4 -->
                 <div class="form-section" v-if="formSection == 4">
 
-                  <div>
+                  <div class="hidden">
                     <h4 class="text-lg font-bold mb-4 inline-block mr-4">I want to send my shipment
                       on:</h4>
                     <input type="date" :max="getMaxDate()" :min="getMinDate()" v-model="form.shippingDate"
@@ -490,84 +499,115 @@
                 <!-- FormSection 5 -->
                 <form method="post" @submit.prevent="makeOrder()" class="form-section" v-show="formSection == 5">
 
-                  <h4 class="text-lg font-bold mb-4">Personal details:</h4>
+                  <div v-if="!isUserLoggedIn">
 
-                  <div class="md:flex md:justify-between">
+                    <h4 class="mb-4">Login to make your order</h4>
 
-                    <div class="input-wrapper mb-2 md:flex-1 md:p-2">
-                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Full Name:</label>
-                      <input required v-model="orderRequestData.customer.customer_name" type="text"
-                        autocomplete="adhbtcajjyd" placeholder="e.g. John Balala"
-                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
-                    </div>
+                    <div class="mb-6">
+                      <button type="button" @click="openModal('login')"
+                        class="px-4 py-2 text-white bg-blue focus:bg-indigo-600 mr-4 focus:outline-none">Login</button>
 
-                    <div class="input-wrapper mb-2 md:flex-1 md:p-2">
-                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Phone Number:</label>
-                      <input required v-model="orderRequestData.customer.customer_phone_number" type="tel"
-                        autocomplete="adhbtcajjydx" placeholder="e.g. 0722124345"
-                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+
+                      <button type="button" @click="openModal('register')"
+                        class="px-4 py-2 text-white bg-blue focus:bg-indigo-600 focus:outline-none">Create
+                        account</button>
                     </div>
 
                   </div>
 
-                  <div class="md:flex md:justify-between">
+                  <div v-if="isUserLoggedIn">
 
-                    <div class="input-wrapper mb-6 md:flex-1 md:p-2">
-                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">National ID:</label>
-                      <input required v-model="orderRequestData.customer.customer_id_number" type="tel"
-                        autocomplete="adhbtcajjydx" placeholder="e.g. 22124345"
-                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    <div v-if="!orderFormSuccess">
+
+                      <h4 class="text-lg font-bold mb-4">Personal details:</h4>
+
+                      <div class="md:flex md:justify-between">
+
+                        <div class="input-wrapper mb-2 md:flex-1 md:p-2">
+                          <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Full Name:</label>
+                          <input required v-model="orderRequestData.customer.customer_name" type="text"
+                            autocomplete="adhbtcajjyd" placeholder="e.g. John Balala"
+                            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                        </div>
+
+                        <div class="input-wrapper mb-2 md:flex-1 md:p-2">
+                          <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Phone Number:</label>
+                          <input required v-model="orderRequestData.customer.customer_phone_number" type="tel"
+                            autocomplete="adhbtcajjydx" placeholder="e.g. 0722124345"
+                            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                        </div>
+
+                      </div>
+
+                      <div class="md:flex md:justify-between">
+
+                        <div class="input-wrapper mb-6 md:flex-1 md:p-2">
+                          <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">National ID:</label>
+                          <input required v-model="orderRequestData.customer.customer_id_number" type="tel"
+                            autocomplete="adhbtcajjydx" placeholder="e.g. 22124345"
+                            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                        </div>
+
+                        <div class="input-wrapper mb-6 md:flex-1 md:p-2">
+                          <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Street Address:</label>
+                          <input required v-model="orderRequestData.customer.customer_street_address" type="text"
+                            autocomplete="adhbtcajjydx" placeholder="e.g. Lower Kabete, Kikuyu"
+                            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                        </div>
+
+                      </div>
+
+                      <h4 class="text-lg font-bold mb-4">Recipient details:</h4>
+
+                      <div class="md:flex md:justify-between">
+
+                        <div class="input-wrapper mb-2 md:flex-1 md:p-2">
+                          <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Full Name:</label>
+                          <input required v-model="orderRequestData.recipient.recipient_name" type="text"
+                            autocomplete="adhbtcajjyd" placeholder="e.g. John Balala"
+                            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                        </div>
+
+                      </div>
+
+                      <div class="md:flex md:justify-between">
+
+                        <div class="input-wrapper mb-2 md:flex-1 md:p-2">
+                          <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Phone Number:</label>
+                          <input required v-model="orderRequestData.recipient.recipient_phone_number" type="tel"
+                            autocomplete="adhbtcajjydx" placeholder="e.g. 0722124345"
+                            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                        </div>
+
+                        <div class="input-wrapper mb-6 md:flex-1 md:p-2">
+                          <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">National ID:</label>
+                          <input required v-model="orderRequestData.recipient.customer_id_number" type="tel"
+                            autocomplete="adhbtcajjydx" placeholder="e.g. 22124345"
+                            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                        </div>
+                      </div>
+
+                      <div class="mb-6"></div>
+
                     </div>
 
-                    <div class="input-wrapper mb-6 md:flex-1 md:p-2">
-                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Street Address:</label>
-                      <input required v-model="orderRequestData.customer.customer_street_address" type="text"
-                        autocomplete="adhbtcajjydx" placeholder="e.g. Lower Kabete, Kikuyu"
-                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    <div role="alert" class="mb-6" v-if="orderFormSubmitted">
+                      <div
+                        :class="{'border rounded-b px-4 py-3':true, 'border-red-400 bg-red-100 text-red-700':orderFormHasError, 'border-green-400 bg-green-100 text-green-700':orderFormSuccess}">
+                        <p v-html="orderFormMessage"></p>
+                      </div>
                     </div>
 
-                  </div>
+                    <div class="mb-6" v-if="!orderFormSuccess">
 
-                  <h4 class="text-lg font-bold mb-4">Recipient details:</h4>
+                      <button @click="showFormSection(4)" type="button"
+                        class="mr-4 px-4 py-2 text-white bg-gray-500 focus:bg-indigo-600 focus:outline-none">Back</button>
 
-                  <div class="md:flex md:justify-between">
-
-                    <div class="input-wrapper mb-2 md:flex-1 md:p-2">
-                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Full Name:</label>
-                      <input required v-model="orderRequestData.recipient.recipient_name" type="text"
-                        autocomplete="adhbtcajjyd" placeholder="e.g. John Balala"
-                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                      <button type="submit"
+                        class="px-4 py-2 text-white bg-blue focus:bg-indigo-600 focus:outline-none">Submit
+                        Order</button>
                     </div>
 
-
-                  </div>
-
-                  <div class="md:flex md:justify-between">
-
-                    <div class="input-wrapper mb-2 md:flex-1 md:p-2">
-                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Phone Number:</label>
-                      <input required v-model="orderRequestData.recipient.recipient_phone_number" type="tel"
-                        autocomplete="adhbtcajjydx" placeholder="e.g. 0722124345"
-                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
-                    </div>
-
-                    <div class="input-wrapper mb-6 md:flex-1 md:p-2">
-                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">National ID:</label>
-                      <input required v-model="orderRequestData.recipient.customer_id_number" type="tel"
-                        autocomplete="adhbtcajjydx" placeholder="e.g. 22124345"
-                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
-                    </div>
-                  </div>
-
-                  <div class="mb-6"></div>
-
-                  <div class="mb-6">
-
-                    <button @click="showFormSection(4)" type="button"
-                      class="mr-4 px-4 py-2 text-white bg-gray-500 focus:bg-indigo-600 focus:outline-none">Back</button>
-
-                    <button type="submit"
-                      class="px-4 py-2 text-white bg-blue focus:bg-indigo-600 focus:outline-none">Submit Order</button>
                   </div>
 
                 </form>
@@ -1058,6 +1098,266 @@
     </footer>
     <!-- end footer -->
 
+    <div class="custom-modal">
+
+      <div class="modal fade" data-keyboard="false" id="loginModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <!-- LOGIN FORM -->
+
+              <div id="login-form" v-if="activeAccountForm == 'login'">
+
+                <div class="form-title text-center">
+                  <h4>Login</h4>
+                </div>
+                <div class="d-flex flex-column">
+
+                  <form method="post" @submit.prevent="login()">
+
+                    <div class="input-wrapper mb-4">
+                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Email:</label>
+                      <input v-model="mainForm.username" :disable="mainFormSuccess" type="email"
+                        placeholder="e.g. jumabalala@gmail.com" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    </div>
+
+                    <div class="input-wrapper mb-6">
+                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Password:</label>
+                      <input v-model="mainForm.password" type="password" :disable="mainFormSuccess" required
+                        placeholder="e.g. XXXXXXXX"
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    </div>
+
+                    <div role="alert" class="mb-6" v-if="mainFormSubmitted">
+                      <div
+                        :class="{'border rounded-b px-4 py-3':true, 'border-red-400 bg-red-100 text-red-700':mainFormHasError, 'border-green-400 bg-green-100 text-green-700':mainFormSuccess}">
+                        <p v-html="mainFormMessage"></p>
+                      </div>
+                    </div>
+
+                    <div class="mb-6">
+                      <button type="submit" v-if="!mainFormSuccess"
+                        class="px-4 py-2 text-white bg-blue hover:opacity-50 focus:bg-indigo-600 focus:outline-none">Login</button>
+                      <div class="my-6">
+                        <div class="mb-2">
+                          <a href="#" @click.prevent="showAccountForm('register')" class="inline-block">I
+                            don't have an
+                            account?</a>
+                        </div>
+                        <div>
+                          <a href="#" @click.prevent="showAccountForm('resetpassword')" class="inline-block">Forgot
+                            Password?</a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+
+              </div>
+
+              <!-- REGISTER FORM -->
+
+              <div id="register-form" v-if="activeAccountForm == 'register'">
+
+                <div class="form-title text-center">
+                  <h4>Sign Up</h4>
+                </div>
+
+                <div class="d-flex flex-column">
+
+                  <form method="post" @submit.prevent="register()">
+
+                    <div class="input-wrapper mb-4">
+                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Name:</label>
+                      <input autocomplete="hvbssf" v-model="mainFormRegister.customer_first_name"
+                        :disable="mainFormRegisterSuccess" type="text" placeholder="e.g. Juma Balala" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    </div>
+
+                    <div class="input-wrapper mb-6">
+                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Email:</label>
+                      <input autocomplete="hvbssfsd" v-model="mainFormRegister.customer_email"
+                        :disable="mainFormRegisterSuccess" type="email" placeholder="e.g. jumabalala@gmail.com" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    </div>
+
+                    <div class="input-wrapper mb-6">
+                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Mobile
+                        Phone:</label>
+                      <input autocomplete="hvbssssf" v-model="mainFormRegister.customer_phone_number"
+                        :disable="mainFormRegisterSuccess" type="tel" placeholder="e.g. 07XXXXXXXX" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    </div>
+
+                    <div class="input-wrapper mb-6">
+                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Password:</label>
+                      <input autocomplete="hvbssfss" v-model="mainFormRegister.password" type="password"
+                        :disable="mainFormRegisterSuccess" required placeholder="e.g. XXXXXXXX"
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    </div>
+
+                    <div class="input-wrapper mb-6">
+                      <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Confirm
+                        Password:</label>
+                      <input autocomplete="hvbssfs" v-model="mainFormRegister.password_confirmation"
+                        :disable="mainFormRegisterSuccess" type="password" placeholder="e.g. XXXXXXXX" required
+                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                    </div>
+
+
+                    <div role="alert" class="mb-6" v-if="mainFormRegisterSubmitted">
+                      <div
+                        :class="{'border rounded-b px-4 py-3':true, 'border-red-400 bg-red-100 text-red-700':mainFormRegisterHasError, 'border-green-400 bg-green-100 text-green-700':mainFormRegisterSuccess}">
+                        <p v-html="mainFormRegisterMessage"></p>
+                      </div>
+                    </div>
+
+                    <div class="mb-6">
+                      <button type="submit" v-if="!mainFormRegisterSuccess"
+                        class="px-4 py-2 text-white bg-blue hover:opacity-50 focus:bg-indigo-600 focus:outline-none">Register</button>
+
+                      <div class="my-6">
+                        <a href="#" @click.prevent="showAccountForm('login')" class="inline-block">Already
+                          have an account?</a>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+
+              <!-- RESET PASSWOR FORM -->
+
+              <div id="reset-password-form" v-if="activeAccountForm == 'resetpassword'">
+
+                <div v-if="showSendVerifyCode">
+
+                  <div class="form-title text-center">
+                    <h4>Forgot Password</h4>
+                  </div>
+
+                  <div class="d-flex flex-column">
+
+                    <form method="post" autocomplete="off" @submit.prevent="sendResetCode()">
+
+                      <div class="input-wrapper mb-6">
+                        <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Email:</label>
+                        <input autocomplete="username" id="username" v-model="mainFormPasswordReset.username"
+                          type="email" placeholder="e.g. jumabalala@gmail.com" required
+                          class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                      </div>
+
+                      <div role="alert" class="mb-6" v-if="mainFormPasswordResetSubmitted">
+                        <div
+                          :class="{'border rounded-b px-4 py-3':true, 'border-red-400 bg-red-100 text-red-700':mainFormPasswordResetHasError, 'border-green-400 bg-green-100 text-green-700':mainFormPasswordResetSuccess}">
+                          <p v-html="mainFormPasswordResetMessage"></p>
+                        </div>
+                      </div>
+
+                      <div class="mb-6">
+                        <button type="submit"
+                          class="px-4 py-2 text-white bg-blue hover:opacity-50 focus:bg-indigo-600 focus:outline-none">Send
+                          reset code</button>
+                        <div class="my-6">
+                          <div class="mb-2">
+                            <a href="#" class="inline-block" @click.prevent="showAccountForm('register')">I don't have
+                              an
+                              account?</a>
+                          </div>
+                          <div>
+                            <a href="#" class="inline-block" @click.prevent="showAccountForm('login')">Login</a>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+
+                </div>
+
+                <div v-if="showVerifyCodeForm">
+                  <div class="form-title text-center">
+                    <h4>Forgot Password</h4>
+                  </div>
+
+                  <div class="d-flex flex-column">
+
+                    <form method="post" autocomplete="off" @submit.prevent="resetPassword()">
+
+                      <p class="mb-4 font-bold" v-html="mainFormPasswordResetMessage"></p>
+
+                      <div class="input-wrapper mb-4">
+                        <label for="code" clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Enter
+                          reset code:</label>
+                        <input autocomplete="code" id="code" v-model="verifyCodeFormData.code" type="text"
+                          placeholder="******" required
+                          class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                      </div>
+
+                      <div class="input-wrapper mb-4">
+                        <label for="pass" clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">New
+                          Password:</label>
+                        <input autocomplete="pass" id="pass" v-model="verifyCodeFormData.password" type="password"
+                          placeholder="********" required
+                          class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                      </div>
+
+                      <div class="input-wrapper mb-6">
+                        <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Confirm
+                          Password:</label>
+                        <input v-model="verifyCodeFormData.password_confirmation" type="password" placeholder="********"
+                          required
+                          class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
+                      </div>
+
+                      <div role="alert" class="mb-6" v-if="verifyCodeForm.submitted">
+                        <div
+                          :class="{'border rounded-b px-4 py-3':true, 'border-red-400 bg-red-100 text-red-700':verifyCodeForm.hasError, 'border-green-400 bg-green-100 text-green-700':verifyCodeForm.success}">
+                          <p v-html="verifyCodeForm.message"></p>
+                        </div>
+                      </div>
+
+                      <div class="mb-6">
+                        <button type="submit" v-if="!verifyCodeForm.success"
+                          class="px-4 py-2 text-white bg-blue hover:opacity-50 focus:bg-indigo-600 focus:outline-none">Reset
+                          Password</button>
+                        <div class="my-6">
+                          <div class="mb-2" v-if="!verifyCodeForm.success">
+                            <a href="#" @click.prevent="resendCode" class="inline-block">I
+                              didn't get the code!</a>
+                          </div>
+                          <div class="mb-2">
+                            <a href="#" @click.prevent="showAccountForm('login')" class="inline-block">Login</a>
+                          </div>
+                          <div>
+                            <a href="#" @click.prevent="showAccountForm('register')" class="inline-block">I don't have
+                              an
+                              account?</a>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
     <!-- JS FILES -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -1176,9 +1476,10 @@
             orderRequestData: {
               'customer_id': null,
               'recipient_id': null,
+              "order_channel_id": 3,
               'corporate_customer_id': null,
-              'time_taken': null,
-              'recipient_type': null,
+              'time_taken': 5,
+              "recipient_type": "normal",
               'recipient_id': null,
               'town_to_id': null,
               'town_from_id': null,
@@ -1209,7 +1510,56 @@
               weight: 0,
               quantity: 0,
               quote_price: 0
-            }
+            },
+            mainForm: {
+              "username": null,
+              "password": null
+            },
+            mainFormSubmitted: false,
+            mainFormHasError: false,
+            mainFormSuccess: false,
+            mainFormMessage: "",
+            mainFormRegister: {
+              "customer_first_name": null,
+              "customer_phone_number": null,
+              "customer_phone_code": "254",
+              "customer_email": "",
+              "password": null,
+              "password_confirmation": null
+            },
+            mainFormRegisterSubmitted: false,
+            mainFormRegisterHasError: false,
+            mainFormRegisterSuccess: false,
+            mainFormRegisterMessage: "",
+            mainFormPasswordReset: {
+              "username": null
+            },
+            verifyCodeFormData: {
+              "username": null,
+              "password": null,
+              "password_confirmation": null,
+              "code": null,
+            },
+            mainFormPasswordResetSubmitted: false,
+            mainFormPasswordResetHasError: false,
+            mainFormPasswordResetSuccess: false,
+            mainFormPasswordResetMessage: "",
+            verifyCodeForm: {
+              title: "",
+              submitted: false,
+              hasError: false,
+              success: false,
+              message: "",
+            },
+            showSendVerifyCode: true,
+            showVerifyCodeForm: false,
+            showResetPasswordForm: false,
+            activeAccountForm: "login",
+
+            orderFormSubmitted: false,
+            orderFormHasError: false,
+            orderFormSuccess: false,
+            orderFormMessage: "",
           }
         },
         created() {
@@ -1223,7 +1573,7 @@
           if (Cookies.get('access_token') !== undefined) {
             this.isUserLoggedIn = true
             this.getUserInfo(Cookies.get('access_token'))
-            this.getShipments(Cookies.get('access_token'))
+            //this.getShipments(Cookies.get('access_token'))
           }
         },
         beforeCreate() {
@@ -1232,8 +1582,291 @@
           }
         },
         methods: {
+          openModal(form) {
+            $("#loginModal").modal();
+
+            if (typeof form !== 'undefined') {
+              this.showAccountForm = form
+            }
+
+          },
+          closeModal() {
+            $("#loginModal").modal("hide");
+          },
+          showAccountForm(form) {
+            //login, register, resetpassword
+            this.activeAccountForm = form;
+          },
+          login() {
+            let self = this
+
+            self.onMainFormReset()
+
+            let axiosHeaders = {
+              headers: { "Content-Type": "application/json" },
+            };
+            let url = "https://courierapi.techapiguru.com/api/v2/login";
+            axios.post(url, this.mainForm, axiosHeaders)
+              .then((response) => {
+                if (response.data.access_token == null) {
+                  self.onMainFormError("Login failed, try again!")
+                } else {
+                  Cookies.set('access_token', response.data.access_token, { expires: response.data.expires_in })
+                  self.onMainFormSuccess("Login successful")
+                  //close modal
+                  this.closeModal()
+                  //call init
+                  this.getUserInfo(response.data.access_token)
+                }
+              })
+              .catch((err) => {
+                if (err.response.data.message) {
+                  if (err.response.data.errors) {
+                    let errors = err.response.data.errors
+                    let str = ''
+                    Object.keys(errors).forEach(key => {
+                      errors[key].forEach(error => {
+                        str += `${error} <br/>`
+                      })
+                    })
+                    self.onMainFormError(str)
+                  } else {
+                    self.onMainFormError(err.response.data.message)
+                  }
+                } else {
+                  self.onMainFormError("Login failed, try again!")
+                }
+              });
+          },
+          onMainFormError(msg) {
+            this.mainFormSubmitted = true;
+            this.mainFormHasError = true;
+            this.mainFormSuccess = false;
+            this.mainFormMessage = msg;
+          },
+          onMainFormSuccess(msg) {
+            this.mainFormSubmitted = true;
+            this.mainFormHasError = false;
+            this.mainFormSuccess = true;
+            this.mainFormMessage = `${msg} <a href="./account.html" class="underline font-bold">My Account</a>`;
+          },
+          onMainFormReset() {
+            this.mainFormSubmitted = false;
+            this.mainFormHasError = false;
+            this.mainFormSuccess = false;
+            this.mainFormMessage = "";
+          },
+          register() {
+            let self = this
+
+            self.onmainFormRegisterReset()
+
+            if (self.mainFormRegister.password !== self.mainFormRegister.password_confirmation) {
+              self.onmainFormRegisterError("Password do not match!")
+              return
+            }
+
+            let axiosHeaders = {
+              headers: { "Content-Type": "application/json" },
+            };
+            let url = "https://courierapi.techapiguru.com/api/v2/register";
+            axios.post(url, this.mainFormRegister, axiosHeaders)
+              .then((response) => {
+                if (response.data.access_token == null) {
+                  self.onmainFormRegisterError("Registration failed, try again!")
+                } else {
+
+                  Cookies.set('access_token', response.data.access_token, { expires: response.data.expires_in })
+                  self.onmainFormRegisterSuccess("Registration successful")
+                  //close modal
+                  this.closeModal();
+                  //call init
+                  this.getUserInfo(response.data.access_token);
+
+                }
+              })
+              .catch((err) => {
+                if (err.response.data.message) {
+                  if (err.response.data.errors) {
+                    let errors = err.response.data.errors
+                    let str = ''
+                    Object.keys(errors).forEach(key => {
+                      errors[key].forEach(error => {
+                        str += `${error} <br/>`
+                      })
+                    })
+                    self.onmainFormRegisterError(str)
+                  } else {
+                    self.onmainFormRegisterError(err.response.data.message)
+                  }
+                } else {
+                  self.onmainFormRegisterError("Registration failed, try again!")
+                }
+              });
+          },
+          onmainFormRegisterError(msg) {
+            this.mainFormRegisterSubmitted = true;
+            this.mainFormRegisterHasError = true;
+            this.mainFormRegisterSuccess = false;
+            this.mainFormRegisterMessage = msg;
+          },
+          onmainFormRegisterSuccess(msg) {
+            this.mainFormRegisterSubmitted = true;
+            this.mainFormRegisterHasError = false;
+            this.mainFormRegisterSuccess = true;
+            this.mainFormRegisterMessage = `${msg}`;
+          },
+          onmainFormRegisterReset() {
+            this.mainFormRegisterSubmitted = false;
+            this.mainFormRegisterHasError = false;
+            this.mainFormRegisterSuccess = false;
+            this.mainFormRegisterMessage = "";
+          },
+          sendResetCode() {
+            let self = this
+
+            self.onmainFormPasswordResetReset()
+
+            let axiosHeaders = {
+              headers: { "Content-Type": "application/json" },
+            };
+            let url = "https://courierapi.techapiguru.com/api/v2/request-password-reset ";
+            axios.post(url, this.mainFormPasswordReset, axiosHeaders)
+              .then((response) => {
+                console.log(response)
+                if (!response.data.success) {
+                  self.onmainFormPasswordResetError("Could not reset your password, try again!")
+                } else {
+                  self.showSendVerifyCode = false
+                  self.showVerifyCodeForm = true
+                  self.onmainFormPasswordResetSuccess(response.data.message)
+                }
+              })
+              .catch((err) => {
+                if (err.response.data.message) {
+                  if (err.response.data.errors) {
+                    let errors = err.response.data.errors
+                    let str = ''
+                    Object.keys(errors).forEach(key => {
+                      errors[key].forEach(error => {
+                        str += `${error} <br/>`
+                      })
+                    })
+                    self.onmainFormPasswordResetError(str)
+                  } else {
+                    self.onmainFormPasswordResetError(err.response.data.message)
+                  }
+                } else {
+                  self.onmainFormPasswordResetError("Login failed, try again!")
+                }
+              });
+          },
+          onmainFormPasswordResetError(msg) {
+            this.mainFormPasswordResetSubmitted = true;
+            this.mainFormPasswordResetHasError = true;
+            this.mainFormPasswordResetSuccess = false;
+            this.mainFormPasswordResetMessage = msg;
+          },
+          onmainFormPasswordResetSuccess(msg) {
+            this.mainFormPasswordResetSubmitted = true;
+            this.mainFormPasswordResetHasError = false;
+            this.mainFormPasswordResetSuccess = true;
+            this.mainFormPasswordResetMessage = `${msg}`;
+          },
+          onmainFormPasswordResetReset() {
+            this.mainFormPasswordResetSubmitted = false;
+            this.mainFormPasswordResetHasError = false;
+            this.mainFormPasswordResetSuccess = false;
+            this.mainFormPasswordResetMessage = "";
+          },
+          resendCode() {
+            let self = this
+
+            self.verifyCodeForm = {
+              submitted: false,
+              hasError: false,
+              success: false,
+              message: "",
+            };
+
+            self.onmainFormPasswordResetReset()
+
+            self.showSendVerifyCode = true
+            self.showVerifyCodeForm = false
+
+          },
+          resetPassword() {
+            let self = this
+
+            self.verifyCodeForm = {
+              submitted: false,
+              hasError: false,
+              success: false,
+              message: "",
+            };
+
+            if (self.verifyCodeFormData.password !== self.verifyCodeFormData.password_confirmation) {
+              self.verifyCodeForm.submitted = true
+              self.verifyCodeForm.hasError = true
+              self.verifyCodeForm.message = "Password do not match!"
+              return
+            }
+
+            self.verifyCodeFormData.username = self.mainFormPasswordReset.username
+
+            let axiosHeaders = {
+              headers: { "Content-Type": "application/json" },
+            };
+            let url = "https://courierapi.techapiguru.com/api/v2/send-password-reset";
+            axios.post(url, self.verifyCodeFormData, axiosHeaders)
+              .then((response) => {
+                self.verifyCodeForm.submitted = true
+                if (!response.data.success) {
+                  self.verifyCodeForm.hasError = true
+                  self.verifyCodeForm.message = "Could not reset your password, try again!"
+                } else {
+                  self.verifyCodeForm.hasError = false
+                  self.verifyCodeForm.success = true
+                  self.verifyCodeForm.message = `${response.data.message}  <a href="./login.html" class="underline font-bold">Login</a>`
+                }
+              })
+              .catch((err) => {
+                self.verifyCodeForm.submitted = true
+                if (err.response.data.message) {
+                  if (err.response.data.errors) {
+                    let errors = err.response.data.errors
+                    let str = ''
+                    Object.keys(errors).forEach(key => {
+                      errors[key].forEach(error => {
+                        str += `${error} <br/>`
+                      })
+                    })
+                    self.verifyCodeForm.hasError = true
+                    self.verifyCodeForm.success = false
+                    self.verifyCodeForm.message = str
+                  } else {
+                    self.verifyCodeForm.hasError = true
+                    self.verifyCodeForm.success = false
+                    self.verifyCodeForm.message = err.response.data.message
+                  }
+                } else {
+                  self.verifyCodeForm.submitted = true
+                  self.verifyCodeForm.hasError = true
+                  self.verifyCodeForm.success = false
+                  self.verifyCodeForm.message = "Could not reset your password, try again!"
+                }
+              });
+          },
           makeOrder() {
-            console.log(`Request Data`, this.orderRequestData)
+
+            //make sure user is loggedin
+
+            if (!this.isUserLoggedIn) {
+              //show modal
+              this.openModal();
+              this.showAccountForm = 'login'
+              return;
+            }
 
             //set towns
 
@@ -1247,6 +1880,7 @@
               obj.category_id = item.id
               obj.quantity = item.qty
               obj.description = item.description.description
+              obj.weight = item.weight
               shipments.push(obj)
             });
 
@@ -1264,18 +1898,22 @@
             let url = "https://courierapi.techapiguru.com/api/v2/orders";
 
             if (this.total.weight <= 0) {
-              alert("Waring: Weight is too low!")
+              alert("Warning: Weight is too low!")
               return
             }
 
             axios.post(url, this.orderRequestData, axiosHeaders)
               .then((response) => {
-                console.log(`Order res`, response)
-                if (response.data !== null) {
-                  console.log(`Order res data`, response.data)
+                if (response == null) {
+                  this.onorderFormError("An error occurred, try again!")
+                } else {
+                  this.onorderFormSuccess("Your order has been received. You'll receive a confirmation message from Modern Mail.")
                 }
               })
               .catch((err) => {
+                if(typeof err.response == 'undefined') {
+                  this.onorderFormError("Request failed, try again!")
+                } else {
                 if (err.response.data.message) {
                   if (err.response.data.errors) {
                     let errors = err.response.data.errors
@@ -1285,17 +1923,36 @@
                         str += `${error} <br/>`
                       })
                     })
-                    alert(str)
+                    this.onorderFormError(str)
                   } else {
-                    alert(err.response.data.message)
+                    this.onorderFormError(err.response.data.message)
                   }
                 } else {
-                  alert("Request failed, try again!")
+                  this.onorderFormError("Request failed, try again!")
                 }
+              }
 
               });
 
             //this.showFormSection(6)
+          },
+          onorderFormError(msg) {
+            this.orderFormSubmitted = true;
+            this.orderFormHasError = true;
+            this.orderFormSuccess = false;
+            this.orderFormMessage = msg;
+          },
+          onorderFormSuccess(msg) {
+            this.orderFormSubmitted = true;
+            this.orderFormHasError = false;
+            this.orderFormSuccess = true;
+            this.orderFormMessage = `${msg}`;
+          },
+          onorderFormReset() {
+            this.orderFormSubmitted = false;
+            this.orderFormHasError = false;
+            this.orderFormSuccess = false;
+            this.orderFormMessage = "";
           },
           updateTotalQty(val) {
             let total = 0
@@ -1449,7 +2106,7 @@
 
             axios.get(url, axiosHeaders)
               .then((response) => {
-                console.log('user', response.data.auth_user)
+                this.isUserLoggedIn = true;
                 let customer = response.data.auth_user
                 this.orderRequestData.customer_id = customer.id
                 this.orderRequestData.customer.customer_name = customer.customer_first_name
@@ -1468,12 +2125,15 @@
                         str += `${error} <br/>`
                       })
                     })
-                    alert(str)
+                    this.isUserLoggedIn = false
+                    Cookies.remove('access_token')
                   } else {
-                    alert(err.response.data.message)
+                    this.isUserLoggedIn = false
+                    Cookies.remove('access_token')
                   }
                 } else {
-                  alert("Request failed, try again!")
+                  this.isUserLoggedIn = false
+                  Cookies.remove('access_token')
                 }
 
               });
