@@ -1149,8 +1149,8 @@
                       <div class="my-6">
                         <div class="mb-2">
                           <a href="#" @click.prevent="showAccountForm('register')" class="inline-block">I
-                            don't have an
-                            account?</a>
+                            don't have an account?
+                          </a>
                         </div>
                         <div>
                           <a href="#" @click.prevent="showAccountForm('resetpassword')" class="inline-block">Forgot
@@ -1586,7 +1586,7 @@
             $("#loginModal").modal();
 
             if (typeof form !== 'undefined') {
-              this.showAccountForm = form
+              this.showAccountForm(form)
             }
 
           },
@@ -1864,7 +1864,7 @@
             if (!this.isUserLoggedIn) {
               //show modal
               this.openModal();
-              this.showAccountForm = 'login'
+              this.activeAccountForm = 'login'
               return;
             }
 

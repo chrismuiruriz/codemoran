@@ -162,7 +162,7 @@
                                         <div class="input-wrapper mb-4">
                                             <label
                                                 clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Name:</label>
-                                            <input v-model="mainForm.customer_first_name" :disable="mainFormSuccess"
+                                            <input v-model="mainFormRegister.customer_first_name" :disable="mainFormRegisterSuccess"
                                                 type="text" placeholder="e.g. Juma Balala" required
                                                 class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                                         </div>
@@ -170,7 +170,7 @@
                                         <div class="input-wrapper mb-6">
                                             <label
                                                 clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Email:</label>
-                                            <input v-model="mainForm.customer_email" :disable="mainFormSuccess"
+                                            <input v-model="mainFormRegister.customer_email" :disable="mainFormRegisterSuccess"
                                                 type="email" placeholder="e.g. jumabalala@gmail.com" required
                                                 class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                                         </div>
@@ -178,7 +178,7 @@
                                         <div class="input-wrapper mb-6">
                                             <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Mobile
                                                 Phone:</label>
-                                            <input v-model="mainForm.customer_phone_number" :disable="mainFormSuccess"
+                                            <input v-model="mainFormRegister.customer_phone_number" :disable="mainFormRegisterSuccess"
                                                 type="tel" placeholder="e.g. 07XXXXXXXX" required
                                                 class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                                         </div>
@@ -186,29 +186,29 @@
                                         <div class="input-wrapper mb-6">
                                             <label
                                                 clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Password:</label>
-                                            <input v-model="mainForm.password" type="password"
-                                                :disable="mainFormSuccess" required placeholder="e.g. XXXXXXXX"
+                                            <input v-model="mainFormRegister.password" type="password"
+                                                :disable="mainFormRegisterSuccess" required placeholder="e.g. XXXXXXXX"
                                                 class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                                         </div>
 
                                         <div class="input-wrapper mb-6">
                                             <label clas="block text-sm text-gray-600 dark:text-gray-400 mb-3">Confirm
                                                 Password:</label>
-                                            <input v-model="mainForm.password_confirmation" :disable="mainFormSuccess"
+                                            <input v-model="mainFormRegister.password_confirmation" :disable="mainFormRegisterSuccess"
                                                 type="password" placeholder="e.g. XXXXXXXX" required
                                                 class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500">
                                         </div>
 
 
-                                        <div role="alert" class="mb-6" v-if="mainFormSubmitted">
+                                        <div role="alert" class="mb-6" v-if="mainFormRegisterSubmitted">
                                             <div
-                                                :class="{'border rounded-b px-4 py-3':true, 'border-red-400 bg-red-100 text-red-700':mainFormHasError, 'border-green-400 bg-green-100 text-green-700':mainFormSuccess}">
-                                                <p v-html="mainFormMessage"></p>
+                                                :class="{'border rounded-b px-4 py-3':true, 'border-red-400 bg-red-100 text-red-700':mainFormRegisterHasError, 'border-green-400 bg-green-100 text-green-700':mainFormRegisterSuccess}">
+                                                <p v-html="mainFormRegisterMessage"></p>
                                             </div>
                                         </div>
 
                                         <div class="mb-6">
-                                            <button type="submit" v-if="!mainFormSuccess"
+                                            <button type="submit" v-if="!mainFormRegisterSuccess"
                                                 class="px-4 py-2 text-white bg-blue hover:opacity-50 focus:bg-indigo-600 focus:outline-none">Register</button>
 
 
@@ -317,7 +317,7 @@
                     return {
                         isUserLoggedIn: false,
                         appName: "Modern Mail",
-                        mainForm: {
+                        mainFormRegister: {
                             "customer_first_name": null,
                             "customer_phone_number": null,
                             "customer_phone_code": "254",
@@ -325,10 +325,10 @@
                             "password": null,
                             "password_confirmation": null
                         },
-                        mainFormSubmitted: false,
-                        mainFormHasError: false,
-                        mainFormSuccess: false,
-                        mainFormMessage: ""
+                        mainFormRegisterSubmitted: false,
+                        mainFormRegisterHasError: false,
+                        mainFormRegisterSuccess: false,
+                        mainFormRegisterMessage: ""
                     }
                 },
                 created() {
@@ -358,10 +358,10 @@
                     register() {
                         let self = this
 
-                        self.onMainFormReset()
+                        self.onmainFormRegisterReset()
 
-                        if (self.mainForm.password !== self.mainForm.password_confirmation) {
-                            self.onMainFormError("Password do not match!")
+                        if (self.mainFormRegister.password !== self.mainFormRegister.password_confirmation) {
+                            self.onmainFormRegisterError("Password do not match!")
                             return
                         }
 
@@ -369,14 +369,14 @@
                             headers: { "Content-Type": "application/json" },
                         };
                         let url = "https://courierapi.techapiguru.com/api/v2/register";
-                        axios.post(url, this.mainForm, axiosHeaders)
+                        axios.post(url, this.mainFormRegister, axiosHeaders)
                             .then((response) => {
                                 if (response.data.access_token == null) {
-                                    self.onMainFormError("Registration failed, try again!")
+                                    self.onmainFormRegisterError("Registration failed, try again!")
                                 } else {
 
                                     Cookies.set('access_token', response.data.access_token, { expires: response.data.expires_in })
-                                    self.onMainFormSuccess("Registration successful")
+                                    self.onmainFormRegisterSuccess("Registration successful")
                                 }
                             })
                             .catch((err) => {
@@ -389,32 +389,32 @@
                                                 str += `${error} <br/>`
                                             })
                                         })
-                                        self.onMainFormError(str)
+                                        self.onmainFormRegisterError(str)
                                     } else {
-                                        self.onMainFormError(err.response.data.message)
+                                        self.onmainFormRegisterError(err.response.data.message)
                                     }
                                 } else {
-                                    self.onMainFormError("Registration failed, try again!")
+                                    self.onmainFormRegisterError("Registration failed, try again!")
                                 }
                             });
                     },
-                    onMainFormError(msg) {
-                        this.mainFormSubmitted = true;
-                        this.mainFormHasError = true;
-                        this.mainFormSuccess = false;
-                        this.mainFormMessage = msg;
+                    onmainFormRegisterError(msg) {
+                        this.mainFormRegisterSubmitted = true;
+                        this.mainFormRegisterHasError = true;
+                        this.mainFormRegisterSuccess = false;
+                        this.mainFormRegisterMessage = msg;
                     },
-                    onMainFormSuccess(msg) {
-                        this.mainFormSubmitted = true;
-                        this.mainFormHasError = false;
-                        this.mainFormSuccess = true;
-                        this.mainFormMessage = `${msg} <a href="./login.html" class="underline font-bold">Login</a>`;
+                    onmainFormRegisterSuccess(msg) {
+                        this.mainFormRegisterSubmitted = true;
+                        this.mainFormRegisterHasError = false;
+                        this.mainFormRegisterSuccess = true;
+                        this.mainFormRegisterMessage = `${msg} <a href="./login.html" class="underline font-bold">Login</a>`;
                     },
-                    onMainFormReset() {
-                        this.mainFormSubmitted = false;
-                        this.mainFormHasError = false;
-                        this.mainFormSuccess = false;
-                        this.mainFormMessage = "";
+                    onmainFormRegisterReset() {
+                        this.mainFormRegisterSubmitted = false;
+                        this.mainFormRegisterHasError = false;
+                        this.mainFormRegisterSuccess = false;
+                        this.mainFormRegisterMessage = "";
                     }
                 }
             })
