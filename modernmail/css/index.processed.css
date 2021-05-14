@@ -128,3 +128,21 @@ input[type="radio"]:checked ~ i {
   font-weight: 600;
   font-size: medium;
 }
+
+@media (min-width: 769px) {
+  .navbar .inner .hamburger-menu {
+    display: none;
+  }
+}
+
+.row-more-link {
+
+}
+
+.row-more-link + ul{
+  display: none;
+}
+
+.row-more-link:focus + ul {
+  display: block;
+}
