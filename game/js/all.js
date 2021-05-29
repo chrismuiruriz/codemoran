@@ -40418,6 +40418,7 @@ var playState = new Object();
         .tween(e.gameCanvas)
         .to({ alpha: 0 }, 1e3, Phaser.Easing.Linear.None, !0)
         .onComplete.add(function () {
+            console.log('Game is over...')
           if (e.gameOver) return void game.state.start("mainMenu");
           window.famobi_analytics
             .trackEvent("EVENT_LEVELFAIL", {
