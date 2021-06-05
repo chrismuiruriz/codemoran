@@ -39923,7 +39923,7 @@ var menuState = {
         288,
         "quitButton",
         function () {
-          showMenuItems();
+          window.history.back()
         },
         this,
         1,
@@ -39943,7 +39943,8 @@ var menuState = {
         188,
         "quitButton",
         function () {
-          showMenuItems();
+          //showMenuItems();
+          window.history.back();
         },
         this,
         1,
@@ -40408,6 +40409,9 @@ var playState = new Object();
         (e.muteButtonPU.input.enabled = !0));
     }
     function r() {
+      console.log('quit button cliked')
+      window.history.back();
+      return;
       game.add
         .tween(e.guiCanvas)
         .to({ alpha: 0 }, 1e3, Phaser.Easing.Linear.None, !0),
@@ -40418,7 +40422,6 @@ var playState = new Object();
         .tween(e.gameCanvas)
         .to({ alpha: 0 }, 1e3, Phaser.Easing.Linear.None, !0)
         .onComplete.add(function () {
-            console.log('Game is over...')
           if (e.gameOver) return void game.state.start("mainMenu");
           window.famobi_analytics
             .trackEvent("EVENT_LEVELFAIL", {
@@ -40436,6 +40439,7 @@ var playState = new Object();
         }, this);
     }
     function i() {
+      
       (projectInfo.lastBreaker = "none"),
         e.gameOver
           ? window.famobi_analytics
@@ -41239,6 +41243,7 @@ var playState = new Object();
           )),
           e.gameOverPanel.addChild(e.replayButton),
           (e.quitButton2.input.enabled = !1),
+          (e.replayButton.visible = 0),
           (e.replayButton.input.enabled = !1),
           (e.popUpPanel = new Phaser.Group(game, e.guiCanvas, "popUpPanel")),
           (e.popUpPanel.anchor = new Point(0.5, 0.5)),
@@ -41272,6 +41277,7 @@ var playState = new Object();
             1,
             0
           )),
+          (e.replayButtonPU.visible = 0),
           e.popUpPanel.addChild(e.replayButtonPU),
           (e.replayButtonPU.anchor = new Phaser.Point(0.5, 0.5)),
           (e.playButtonPU = new Phaser.Button(
@@ -41463,10 +41469,13 @@ var playState = new Object();
       (e.popUpPanel.visible = !1),
       (e.quitButtonPU.input.enabled = !1),
       (e.replayButtonPU.input.enabled = !1),
+      (e.replayButtonPU.visible = 0),
       (e.playButtonPU.input.enabled = !1),
       (e.muteButtonPU.input.enabled = !1);
   }),
   (playState.shutdown = function () {
+    
+    console.log('Game over player 3...')
     var e = this.gameInfo;
     e.gameCanvas.destroy(),
       e.guiCanvas.destroy(),
@@ -42059,11 +42068,32 @@ playState.update = function () {
   }
   function u() {
     (a.quitButton2.visible = !0),
-      (a.replayButton.visible = !0),
+      (a.replayButton.visible = 0),
       (a.quitButton2.input.enabled = !0),
       (a.replayButton.input.enabled = !0);
   }
   function d() {
+    console.log('url param ',getAllUrlParams().user);
+    console.log('best score is ',projectInfo.bestScore);
+    let user = getAllUrlParams().user;
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({"user_id":user,"score":projectInfo.bestScore});
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("https://qrrapi.herokuapp.com/api/v1/score/save", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+
     if (
       "p1" == a.winner &&
       1 == projectInfo.mode &&
@@ -43242,15 +43272,16 @@ playState.update = function () {
           "p1" == a.winner && 1 == projectInfo.mode)
         )
           (a.quitButton2.visible = !1),
-            (a.replayButton.visible = !1),
+            (a.replayButton.visible = 0),
             (function () {
+              console.log('Game over player wins')
               Sound.Play("cheer", 1), game.time.events.add(2e3, p, this);
             })();
         else {
-          (a.quitButton2.visible = !1), (a.replayButton.visible = !1);
+          (a.quitButton2.visible = !1), (a.replayButton.visible = 0);
           var e = function () {
             (a.quitButton2.visible = !0),
-              (a.replayButton.visible = !0),
+              (a.replayButton.visible = 0),
               (a.quitButton2.input.enabled = !0),
               (a.replayButton.input.enabled = !0);
           };
