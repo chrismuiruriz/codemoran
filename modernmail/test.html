@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#fed300" />
   <title>Modern Mail | A Modern Delivery Service</title>
   <meta name="author" content="Chris Muiruri">
-  <meta name="description" content="">
+  <meta name="description" content="We are a Cargo & Freight Company offering our services in Kenya, Tanzania, Uganda and Rwanda at very affordable rates">
   <meta name="keywords" content="">
 
   <!-- CSS FILES -->
@@ -67,9 +67,9 @@
           <!-- end custom-menu -->
           <div class="site-menu">
             <ul>
-              <li><a href="#">Home</a></li>
+              <li><a href="./index.html">Home</a></li>
               <li><a href="#shipment-form">Tracking</a></li>
-              <li><a href="#" v-if="isUserLoggedIn">My Orders</a></li>
+              <li><a href="#" v-if="isUserLoggedIn">Orders</a></li>
               <li>
                 <a href="./index.html" @click.prevent="logout" v-if="isUserLoggedIn">Logout</a>
 
@@ -118,9 +118,9 @@
           <!-- end custom-menu -->
           <div class="site-menu">
             <ul>
-              <li><a href="#">Home</a></li>
+              <li><a href="./index.html">Home</a></li>
               <li><a href="index.html#shipment-form">Tracking</a></li>
-              <li><a href="#" v-if="isUserLoggedIn">My Orders</a></li>
+              <li><a href="#" v-if="isUserLoggedIn">Orders</a></li>
             </ul>
           </div>
           <!-- end site-menu -->
@@ -143,7 +143,7 @@
           <!-- end col-12 -->
           <div class="col-md-12 col-xs-12" id="quote-form">
             <div class="calculator">
-              <h6 style="margin-bottom: 2rem;">My Orders</h6>
+              <h6 style="margin-bottom: 2rem;">Orders</h6>
 
               <!-- Tailwind here -->
               <div class="form-wrapper bg-white shadow-sm p-4 md:p-6 md:py-8">
@@ -177,7 +177,7 @@
           <div class="col-lg-4 col-md-6">
             <h6 class="widget-title">Quick Links</h6>
             <ul class="footer-menu">
-              <li><a href="#">Home</a></li>
+              <li><a href="./index.html">Home</a></li>
               <li><a href="#">Tracking</a></li>
               <li><a href="#">Contact Us</a></li>
             </ul>
@@ -742,7 +742,7 @@
             this.mainFormSubmitted = true;
             this.mainFormHasError = false;
             this.mainFormSuccess = true;
-            this.mainFormMessage = `${msg} <a href="./account.html" class="underline font-bold">My Account</a>`;
+            this.mainFormMessage = `${msg} <a href="./orders.html" class="underline font-bold">My Account</a>`;
           },
           onMainFormReset() {
             this.mainFormSubmitted = false;

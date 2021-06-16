@@ -9,7 +9,10 @@
     <meta name="theme-color" content="#fed300" />
     <title>Modern Mail | A Modern Delivery Service</title>
     <meta name="author" content="Chris Muiruri" />
-    <meta name="description" content="We are a Cargo & Freight Company offering our services in Kenya, Tanzania, Uganda and Rwanda at very affordable rates" />
+    <meta
+      name="description"
+      content="We are a Cargo & Freight Company offering our services in Kenya, Tanzania, Uganda and Rwanda at very affordable rates"
+    />
     <meta name="keywords" content="" />
 
     <!-- CSS FILES -->
@@ -107,6 +110,10 @@
                 <li>
                   <a href="./orders.html" v-if="isUserLoggedIn">Orders</a>
                 </li>
+
+                <li>
+                  <a href="./shipments.html" v-if="isUserLoggedIn">Shipments</a>
+                </li>
                 <li>
                   <a
                     href="./index.html"
@@ -194,6 +201,10 @@
                 <li><a href="#shipment-form">Tracking</a></li>
                 <li>
                   <a href="./orders.html" v-if="isUserLoggedIn">Orders</a>
+                </li>
+
+                <li>
+                  <a href="./shipments.html" v-if="isUserLoggedIn">Shipments</a>
                 </li>
               </ul>
             </div>
@@ -347,24 +358,26 @@
                   <div
                     class="form-wrapper bg-white shadow-sm p-4 md:p-6 md:py-8"
                   >
-                    <table
-                      id="user-table"
-                      class="display table-bordered nowrap table-sm"
-                      cellspacing="0"
-                      width="100%"
-                    >
-                      <thead>
-                        <tr>
-                          <th>Tracking No.</th>
-                          <th>Description</th>
-                          <th>Quantity</th>
-                          <th>Weight</th>
-                          <th>Amount</th>
-                          <th>status</th>
-                        </tr>
-                      </thead>
-                      <tbody></tbody>
-                    </table>
+                    <div class="table-responsive">
+                      <table
+                        id="user-table"
+                        class="display table-bordered nowrap table-sm"
+                        cellspacing="0"
+                        width="100%"
+                      >
+                        <thead>
+                          <tr>
+                            <th>Tracking No.</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Weight</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
 
