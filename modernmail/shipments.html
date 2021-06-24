@@ -352,7 +352,22 @@
                   </h6>
                 </div>
                 <div v-show="isUserLoggedIn">
-                  <h6 style="margin-bottom: 2rem">Shipments</h6>
+                  <div class="mb-6 md:flex md:justify-between items-center">
+                    <h6 class="mr-4 md:mb-0 mb-4 font-bold">Shipments</h6>
+                    <a
+                      href="./index.html"
+                      class="
+                        px-4
+                        py-2
+                        text-white
+                        bg-blue
+                        hover:text-white
+                        focus:bg-indigo-600
+                        focus:outline-none
+                      "
+                      >New Order</a
+                    >
+                  </div>
 
                   <!-- Tailwind here -->
                   <div
